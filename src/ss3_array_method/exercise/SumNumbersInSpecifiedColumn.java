@@ -7,6 +7,8 @@ public class SumNumbersInSpecifiedColumn {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
+        int i;
+        int j;
 
         System.out.print("Input Array Length: ");
         int num = Integer.parseInt(scanner.nextLine());
@@ -17,8 +19,8 @@ public class SumNumbersInSpecifiedColumn {
 
         double[][] array = new double[num][num1];
 
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
+        for (i = 0; i < array.length; i++) {
+            for (j = 0; j < array[i].length; j++) {
                 System.out.printf("Input Element %d Of %d ", (j+1), (i+1));
                 array[i][j] = Integer.parseInt(scanner.nextLine());
                 if (j == (num2 - 1)) {
