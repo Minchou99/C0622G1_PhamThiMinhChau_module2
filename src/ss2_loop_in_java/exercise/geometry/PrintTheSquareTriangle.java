@@ -7,22 +7,24 @@ public class PrintTheSquareTriangle {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input Height: ");
         int height = Integer.parseInt(scanner.nextLine());
-        for (int i = height; i >= 1; i--) {
-            for (int j = 1; j <= i; j++) {
+        int i;
+        int j;
+        for (i = height; i >= 1; i--) {
+            for (j = 1; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
         System.out.println();
-        for (int i = 1; i <= height; i++) {
-            for (int j = 1; j <= i; j++) {
+        for (i = 1; i <= height; i++) {
+            for (j = 1; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
         System.out.println();
-        for (int i = height; i >= 1; i--) {
-            for (int j = height; j >= 1; j--) {
+        for (i = height; i >= 1; i--) {
+            for (j = height; j >= 1; j--) {
                 if (j - i > 0) {
                     System.out.print(" ");
                 } else {
@@ -32,8 +34,8 @@ public class PrintTheSquareTriangle {
             System.out.println();
         }
         System.out.println();
-        for (int i = 1; i <= height; i++) {
-            for (int j = height; j >= 1; j--) {
+        for (i = 1; i <= height; i++) {
+            for (j = height; j >= 1; j--) {
                 if (j - i > 0) {
                     System.out.print(" ");
                 } else {

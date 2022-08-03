@@ -11,7 +11,8 @@ public class AddElementToArray {
         int num = scanner.nextInt();
         System.out.print("Input Index: ");
         int index = scanner.nextInt();
-        for (int i = arr.length - 1; i > index; i--) {
+        int i;
+        for (i = arr.length - 1; i > index; i--) {
             arr[i] = arr[i - 1];
         }
         arr[index] = num;

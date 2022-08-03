@@ -8,12 +8,13 @@ public class MergeArray {
         Scanner scanner = new Scanner(System.in);
         int num1;
         int num2;
+        int i;
         do {
             System.out.print("Nhập vào số phần tử của mảng 1: ");
             num1 = scanner.nextInt();
         } while (num1 <= 0);
         int[] arr1 = new int[num1];
-        for (int i = 0; i < num1; i++) {
+        for (i = 0; i < num1; i++) {
             System.out.print("Nhập phần tử thứ " + i + ":");
             arr1[i] = scanner.nextInt();
         }
@@ -22,16 +23,16 @@ public class MergeArray {
             num2 = scanner.nextInt();
         } while (num2 <= 0);
         int[] arr2 = new int[num1];
-        for (int i = 0; i < num2; i++) {
+        for (i = 0; i < num2; i++) {
             System.out.print("Nhập phần tử thứ " + i + ":");
             arr2[i] = scanner.nextInt();
         }
         int[] arr3 = new int[(num1 + num2)];
-        for (int i = 0; i < num1; i++) {
+        for (i = 0; i < num1; i++) {
             arr3[i] = arr1[i];
         }
         int j = 0;
-        for (int i = num1; i <= (num2 * 2); i++) {
+        for (i = num1; i <= (num2 * 2); i++) {
             arr3[i] = arr2[j];
             j++;
         }

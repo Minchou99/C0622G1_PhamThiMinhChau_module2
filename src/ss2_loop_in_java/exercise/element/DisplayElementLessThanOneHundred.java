@@ -1,10 +1,10 @@
 package ss2_loop_in_java.exercise.element;
 
 public class DisplayElementLessThanOneHundred {
-    public static boolean checkPrime(int numberInside) {
+    public static boolean checkPrime(int number) {
         int i;
-        for (i = 2; i <= Math.sqrt(numberInside); i++) {
-            if (numberInside % i == 0) {
+        for (i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
                 return false;
             }
         }
