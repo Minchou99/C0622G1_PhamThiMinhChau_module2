@@ -12,9 +12,11 @@ public class Main {
         System.out.print("Enter the c:");
         double c = scanner.nextDouble();
         QuadraticEquation quadraticEquation = new QuadraticEquation(a, b, c);
-        if (quadraticEquation.getDiscriminant() >= 0) {
-            System.out.print("The equals has two root: \n" + "Root1: " + quadraticEquation.getRoot1() + ", Root2: " + quadraticEquation.getRoot2());
-        } else {
+        if (quadraticEquation.getDiscriminant() > 0) {
+            System.out.print("The equals has two roots: \n" + "Root1: " + quadraticEquation.getRoot1() + ", Root2: " + quadraticEquation.getRoot2());
+        } else if(quadraticEquation.getDiscriminant()==0){
+            System.out.print("The equals has two roots with a same value: \n" + quadraticEquation.getRoot0() );
+        }else {
             System.out.println("The equation has no roots");
         }
     }

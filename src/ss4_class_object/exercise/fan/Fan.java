@@ -13,7 +13,7 @@ public class Fan {
         this.speed = SLOW;
         this.on = false;
         this.radius = 5;
-        this.color = "blue";
+        this.color = "Blue";
     }
 
 
@@ -60,7 +60,6 @@ public class Fan {
                     '}';
         }
         return "Fan{" +
-                " speed=" + this.getSpeed() +
                 " radius=" + this.getRadius() +
                 ", color='" + this.getColor() + '\'' +
                 ",fan is off" +
