@@ -1,22 +1,19 @@
 package ss4_class_object.exercise.fan;
 
 public class Fan {
-    private final int slow;
-    private final int medium;
-    private final int fast;
+    private final int SLOW = 1;
+    private final int MEDIUM = 2;
+    private final int FAST = 3;
     private int speed;
     private boolean on;
     private double radius;
     private String color;
 
     public Fan() {
-        this.slow=1;
-        this.medium=2;
-        this.fast=3;
-        this.speed=slow;
-        this.on=false;
-        this.radius=5;
-        this.color="blue";
+        this.speed = SLOW;
+        this.on = false;
+        this.radius = 5;
+        this.color = "blue";
     }
 
 
@@ -28,7 +25,7 @@ public class Fan {
         this.speed = speed;
     }
 
-    public boolean isOn() {
+    public boolean getIsOn() {
         return on;
     }
 
@@ -54,11 +51,20 @@ public class Fan {
 
     @Override
     public String toString() {
+        if (this.getIsOn()) {
+            return "Fan{" +
+                    " speed=" + this.getSpeed() +
+                    ", radius=" + this.getRadius() +
+                    ", color='" + this.color + '\'' +
+                    ", fan is on" +
+                    '}';
+        }
         return "Fan{" +
-                " speed=" + speed +
-                ", on=" + on +
-                ", radius=" + radius +
-                ", color='" + color + '\'' +
+                " speed=" + this.getSpeed() +
+                " radius=" + this.getRadius() +
+                ", color='" + this.getColor() + '\'' +
+                ",fan is off" +
                 '}';
     }
 }
+

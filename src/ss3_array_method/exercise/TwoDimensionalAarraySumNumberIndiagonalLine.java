@@ -9,6 +9,7 @@ public class TwoDimensionalAarraySumNumberIndiagonalLine {
         int sum = 0;
         int i;
         int j;
+        int k;
 
         System.out.print("Input Array Length: ");
         int num = Integer.parseInt(scanner.nextLine());
@@ -19,10 +20,11 @@ public class TwoDimensionalAarraySumNumberIndiagonalLine {
             for (j = 0; j < array[i].length; j++) {
                 System.out.printf("Input Element %d Of %d ", (j + 1), (i + 1));
                 array[i][j] = Integer.parseInt(scanner.nextLine());
-                if (j == i) {
-                    sum += array[i][j];
-                }
             }
+        }
+
+        for (k = 0; k < array.length; k++) {
+            sum += array[k][k];
         }
 
         System.out.println(Arrays.deepToString(array));
