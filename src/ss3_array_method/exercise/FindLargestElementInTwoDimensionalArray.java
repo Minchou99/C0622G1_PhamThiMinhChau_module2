@@ -16,7 +16,7 @@ public class FindLargestElementInTwoDimensionalArray {
         for (i = 0; i < num; i++) {
             for (j = 0; j < num1; j++) {
                 System.out.print("Input Element " + (j + 1) + " Of " + (i + 1) + " : ");
-                arr[i][j] = scanner.nextInt();
+                arr[i][j] = Integer.parseInt(scanner.nextLine());
             }
         }
         System.out.print("Two-Dimensional Array: " + Arrays.deepToString(arr));

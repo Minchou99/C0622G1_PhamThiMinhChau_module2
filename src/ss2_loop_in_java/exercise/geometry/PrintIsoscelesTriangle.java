@@ -8,14 +8,11 @@ public class PrintIsoscelesTriangle {
         System.out.print("Input Height: ");
         int height = Integer.parseInt(inputNumber.nextLine());
         int width = height * 2 - 1;
-        int i;
-        int j;
-        int k;
-        for (i = 1; i <= height; i++) {
-            for (j = 0; j <= (width / 2 - i); j++) {
+        for (int i = 1; i <= height; i++) {
+            for (int j = 0; j <= (width / 2 - i); j++) {
                 System.out.print(" ");
             }
-            for (k = 1; k <= (i * 2 - 1); k++) {
+            for (int k = 1; k <= (i * 2 - 1); k++) {
                 System.out.print("*");
             }
             System.out.println(" ");
