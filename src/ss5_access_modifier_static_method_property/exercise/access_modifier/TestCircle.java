@@ -6,7 +6,8 @@ public class TestCircle {
         System.out.println(circle.getRadius());
         System.out.println(circle.getArea());
 
-        Circle circle1 = new Circle(3);
+        Circle circle1 = new Circle();
+        circle1.setRadius(2);
         System.out.println(circle1.getRadius());
         System.out.println(circle1.getArea());
     }
