@@ -17,11 +17,7 @@ public class Student {
         this.classes = classes;
     }
 
-     public String getName() {
-        return name;
-    }
-
-     public String getClasses() {
-        return classes;
-    }
+     public String display(){
+        return this.name + " " + this.classes;
+     }
 }
