@@ -2,20 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beebab9d-bf16-4097-9433-533de8c5dd26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/controller/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/controller/TeacherController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/model/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/model/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/service/IStudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/service/ITeacherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/service/impl/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/service/impl/TeacherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/view/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa/exercise/MyArrayList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa/exercise/MyArrayList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise2/service/MotobikeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise2/service/impl/MotobikeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss11_dsa_stack_queue/exersice/checking_bracket/Bracket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss11_dsa_stack_queue/exersice/convert_decimal_binary/ConvertDecimalBinary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss11_dsa_stack_queue/exersice/palindrome_queue/Palindrome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss11_dsa_stack_queue/exersice/reverse_element_in_interger_array/ReserveIntegerElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss11_dsa_stack_queue/exersice/reverse_element_in_interger_array/ReserveStringElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/controller/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/controller/StudentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/controller/TeacherController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/model/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/model/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/model/Teacher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/service/IStudentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/service/ITeacherService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/service/impl/StudentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/service/impl/TeacherService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/view/MainView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/model/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/service/IStudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/IStudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/service/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/ITeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/service/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/impl/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/service/impl/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/impl/TeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/view/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/view/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,13 +83,65 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="MainView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss10_dsa_mvc.view.MainView" />
+  <component name="RunManager" selected="Application.Bracket">
+    <configuration name="Bracket" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss11_dsa_stack_queue.exersice.checking_bracket.Bracket" />
       <module name="module_2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss10_dsa_mvc.view.*" />
+          <option name="PATTERN" value="ss11_dsa_stack_queue.exersice.checking_bracket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConvertDecimalBinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss11_dsa_stack_queue.exersice.convert_decimal_binary.ConvertDecimalBinary" />
+      <module name="module_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss11_dsa_stack_queue.exersice.convert_decimal_binary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Palindrome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss11_dsa_stack_queue.exersice.palindrome_queue.Palindrome" />
+      <module name="module_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss11_dsa_stack_queue.exersice.palindrome_queue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReserveIntegerElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss11_dsa_stack_queue.exersice.reverse_element_in_interger_array.ReserveIntegerElement" />
+      <module name="module_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss11_dsa_stack_queue.exersice.reverse_element_in_interger_array.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReserveStringElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss11_dsa_stack_queue.exersice.reverse_element_in_interger_array.ReserveStringElement" />
+      <module name="module_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ss11_dsa_stack_queue.exersice.reverse_element_in_interger_array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,7 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainView" />
+        <item itemvalue="Application.Bracket" />
+        <item itemvalue="Application.Palindrome" />
+        <item itemvalue="Application.ConvertDecimalBinary" />
+        <item itemvalue="Application.ReserveStringElement" />
+        <item itemvalue="Application.ReserveIntegerElement" />
       </list>
     </recent_temporary>
   </component>
@@ -98,6 +170,10 @@
       <option name="presentableId" value="Default" />
       <updated>1660329584230</updated>
       <workItem from="1660329589044" duration="2960000" />
+      <workItem from="1660405938043" duration="1178000" />
+      <workItem from="1660477979773" duration="4000" />
+      <workItem from="1660479834033" duration="2043000" />
+      <workItem from="1660533584863" duration="12422000" />
     </task>
     <servers />
   </component>
@@ -109,22 +185,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1660331996298" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1660332551245">
+    <state width="1323" height="176" key="GridCell.Tab.0.bottom" timestamp="1660557866095">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1660332551245" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1660332551245">
+    <state width="1323" height="176" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1660557866095" />
+    <state width="1323" height="176" key="GridCell.Tab.0.center" timestamp="1660557866095">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1660332551245" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1660332551244">
+    <state width="1323" height="176" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1660557866095" />
+    <state width="1323" height="176" key="GridCell.Tab.0.left" timestamp="1660557866095">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1660332551244" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1660332551245">
+    <state width="1323" height="176" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1660557866095" />
+    <state width="1323" height="176" key="GridCell.Tab.0.right" timestamp="1660557866095">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1660332551245" />
+    <state width="1323" height="176" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1660557866095" />
     <state x="198" y="112" key="caller.chooser.dialog" timestamp="1660331630510">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
