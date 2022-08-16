@@ -1,5 +1,4 @@
 package ss10_dsa_mvc.exercise1.service.impl;
-
 import ss10_dsa_mvc.exercise1.model.Student;
 import ss10_dsa_mvc.exercise1.service.IStudentService;
 
@@ -43,6 +42,61 @@ public class StudentService implements IStudentService {
         }
     }
 
+    @Override
+    public void editStudent() {
+        Student student = findStudent();
+        int choose;
+        do {
+            System.out.println("Học viên cần chỉnh sửa: ");
+            System.out.println(student.toString());
+            System.out.println("Bạn muốn chỉnh sửa nội dung nào?");
+            System.out.println("1. ID");
+            System.out.println("2. Tên học viên");
+            System.out.println("3. Ngày sinh");
+            System.out.println("4. Giới tính");
+            System.out.println("5. Điểm");
+            System.out.println("6. Lớp học");
+            System.out.println("7. Thoát");
+            System.out.println("Chọn nội dung cần chỉnh sửa 1 -> 7: ");
+            choose = Integer.parseInt(scanner.nextLine());
+
+            switch (choose) {
+                case 1:
+                    student.setId(Integer.parseInt(getEditInfo("ID")));
+                    break;
+                case 2:
+                    student.setName(getEditInfo("Tên Học Viên"));
+                    break;
+                case 3:
+                    student.setDateOfBirth(getEditInfo("Ngày sinh"));
+                    break;
+                case 4:
+                    student.setGender(getEditInfo("Giới tính"));
+                    break;
+                case 5:
+                    student.setPoint(getEditInfo("Điểm"));
+                    break;
+                case 6:
+                    student.setPoint(getEditInfo("Lớp học"));
+                    break;
+                case 7:
+                    return;
+            }
+            System.out.println("Chỉnh sửa thành công!");
+            System.out.println("Bạn có muốn tiếp tục chỉnh sửa?");
+            System.out.println("Vui lòng chọn 1 (Có) - 2 (Không)");
+            choose = Integer.parseInt(scanner.nextLine());
+            if (choose != 1) {
+                return;
+            }
+        } while (true);
+    }
+
+    public String getEditInfo(String editContent) {
+        System.out.print("Vui lòng nhập " + editContent + " mới: ");
+        return scanner.nextLine();
+    }
+
     private Student findStudent() {
         System.out.println("Mời bạn nhập vào id cần xóa: ");
         int id = Integer.parseInt(scanner.nextLine());
@@ -64,7 +118,7 @@ public class StudentService implements IStudentService {
         System.out.print("Mời bạn giới tính: ");
         String gender = scanner.nextLine();
         System.out.print("Mời bạn nhập điểm: ");
-        double point = Double.parseDouble(scanner.nextLine());
+        String point = scanner.nextLine();
         System.out.print("Mời bạn nhập tên lớp: ");
         String nameClass = scanner.nextLine();
         Student student = new Student(id, name, dateOfBirth, gender, point, nameClass);

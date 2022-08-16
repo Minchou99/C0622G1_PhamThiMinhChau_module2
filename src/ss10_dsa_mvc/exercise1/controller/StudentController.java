@@ -28,6 +28,7 @@ public class StudentController {
                     studentService.addStudent();
                     break;
                 case 3:
+                    studentService.editStudent();
                     break;
                 case 4:
                     studentService.removeStudent();

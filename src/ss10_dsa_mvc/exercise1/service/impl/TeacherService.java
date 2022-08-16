@@ -57,6 +57,57 @@ public class TeacherService implements ITeacherService {
         }
     }
 
+    @Override
+    public void editTeacher() {
+        Teacher teacher = findTeacher();
+        int choose;
+        do {
+            System.out.println("Giảng viên cần chỉnh sửa: ");
+            System.out.println(teacher.toString());
+            System.out.println("Bạn muốn chỉnh sửa nội dung nào?");
+            System.out.println("1. ID");
+            System.out.println("2. Tên giảng viên");
+            System.out.println("3. Ngày sinh");
+            System.out.println("4. Giới tính");
+            System.out.println("5. Chuyên môn");
+            System.out.println("6. Thoát");
+            System.out.print("Chọn nội dung cần chỉnh sửa 1 -> 6: ");
+            choose = Integer.parseInt(scanner.nextLine());
+
+            switch (choose) {
+                case 1:
+                    teacher.setId(Integer.parseInt(getEditInfo("ID")));
+                    break;
+                case 2:
+                    teacher.setName(getEditInfo("Tên Giảng Viên"));
+                    break;
+                case 3:
+                    teacher.setDateOfBirth(getEditInfo("Ngày sinh"));
+                    break;
+                case 4:
+                    teacher.setGender(getEditInfo("Giới tính"));
+                    break;
+                case 5:
+                    teacher.setSpecialize(getEditInfo("Chuyên môn"));
+                    break;
+                case 6:
+                    return;
+            }
+            System.out.println("Chỉnh sửa thành công!");
+            System.out.println("Bạn có muốn tiếp tục chỉnh sửa?");
+            System.out.print("Vui lòng chọn 1 (Có) - 2 (Không): ");
+            choose = Integer.parseInt(scanner.nextLine());
+            if (choose != 1) {
+                return;
+            }
+        } while (true);
+    }
+
+    public String getEditInfo(String editContent) {
+        System.out.print("Vui lòng nhập " + editContent + " mới: ");
+        return scanner.nextLine();
+    }
+
     private Teacher findTeacher() {
         System.out.println("Mời bạn nhập vào id cần xóa: ");
         int id = Integer.parseInt(scanner.nextLine());

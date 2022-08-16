@@ -28,6 +28,7 @@ public class TeacherController {
                     teacherService.addTeacher();
                     break;
                 case 3:
+                    teacherService.editTeacher();
                     break;
                 case 4:
                     teacherService.removeTeacher();
