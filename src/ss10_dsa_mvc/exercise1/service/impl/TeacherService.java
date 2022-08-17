@@ -103,6 +103,30 @@ public class TeacherService implements ITeacherService {
         } while (true);
     }
 
+    @Override
+    public void searchIdTeacher() {
+        System.out.print("Vui lòng nhập id cần tìm kiếm: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < teachers.size(); i++) {
+            if (teachers.get(i).getId() == id) {
+                System.out.println(teachers.get(i));
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void searchNameTeacher() {
+        System.out.print("Vui lòng nhập name cần tìm kiếm: ");
+        String name = scanner.nextLine();
+        for (int i = 0; i < teachers.size(); i++) {
+            if (teachers.get(i).getName().contains(name)) {
+                System.out.println(teachers.get(i));
+                break;
+            }
+        }
+    }
+
     public String getEditInfo(String editContent) {
         System.out.print("Vui lòng nhập " + editContent + " mới: ");
         return scanner.nextLine();

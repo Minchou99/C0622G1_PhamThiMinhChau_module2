@@ -1,4 +1,5 @@
 package ss10_dsa_mvc.exercise1.service.impl;
+
 import ss10_dsa_mvc.exercise1.model.Student;
 import ss10_dsa_mvc.exercise1.service.IStudentService;
 
@@ -90,6 +91,30 @@ public class StudentService implements IStudentService {
                 return;
             }
         } while (true);
+    }
+
+    @Override
+    public void searchIdStudent() {
+        System.out.print("Vui lòng nhập id cần tìm kiếm: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getId() == id) {
+                System.out.println(students.get(i));
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void searchNameStudent() {
+        System.out.print("Vui lòng nhập name cần tìm kiếm: ");
+        String name = scanner.nextLine();
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getName().contains(name)) {
+                System.out.println(students.get(i));
+                break;
+            }
+        }
     }
 
     public String getEditInfo(String editContent) {
