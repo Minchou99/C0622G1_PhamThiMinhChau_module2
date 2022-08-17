@@ -4,12 +4,23 @@ import ss12_collection.model.Bike;
 import ss12_collection.service.IBikeService;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class BikeService implements IBikeService {
     private static Scanner scanner = new Scanner(System.in);
     private static List<Bike> bikes = new ArrayList<>();
+
+    static {
+        Bike bike1 = new Bike("1", "Xe tập đi", "Xanh", "Thái Lan", "Yamaha", 2000);
+        Bike bike2 = new Bike("2", "Xe cho bé 5 tuổi", "Xanh", "Thái Lan", "Yamaha", 3000);
+        Bike bike3 = new Bike("3", "Xe cho bé 10 tuổi", "Xanh", "Thái Lan", "Yamaha", 5000);
+
+        bikes.add(bike1);
+        bikes.add(bike2);
+        bikes.add(bike3);
+    }
 
     @Override
     public void addBike() {
@@ -117,6 +128,13 @@ public class BikeService implements IBikeService {
     @Override
     public void findBike() {
         System.out.println("Mời bạn nhập vào id cần tìm");
+        String idFind = scanner.nextLine();
+
+        for (Bike bike : bikes) {
+            if (bike.getId().equals(idFind)) {
+                System.out.println(bike.toString());
+            }
+        }
     }
 
     public Bike findBikeInList() {
@@ -132,6 +150,18 @@ public class BikeService implements IBikeService {
 
     @Override
     public void arrangeBike() {
+        System.out.print("Bạn muốn sắp xếp theo giảm dần hay tăng dần? \n Vui lòng chọn 1 (Tăng dần) - 2 (Giảm dần): ");
+        int choice = Integer.parseInt(scanner.nextLine());
 
+        switch (choice) {
+            case 1:
+                Collections.sort(bikes, new BikeComparator());
+                System.out.println("Sắp xếp thành công!");
+                break;
+            case 2:
+                Collections.sort(bikes, new BikeComparator().reversed());
+                System.out.println("Sắp xếp thành công!");
+                break;
+        }
     }
 }

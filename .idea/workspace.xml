@@ -2,41 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beebab9d-bf16-4097-9433-533de8c5dd26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ss11_dsa_stack_queue/exersice/count_occurrences/CountOccurrence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_collection/controller/BikeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_collection/model/Bike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_collection/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_collection/service/IBikeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_collection/service/impl/BikeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_collection/view/MainView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_java_collection_framework/controller/BikeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_java_collection_framework/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_java_collection_framework/controller/MotoBikeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_java_collection_framework/model/Bike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_java_collection_framework/model/MotoBike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_java_collection_framework/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_java_collection_framework/service/IBikeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_java_collection_framework/service/IMotoBikeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_java_collection_framework/service/impl/BikeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_java_collection_framework/service/impl/MotoBikeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss12_java_collection_framework/view/MainView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss12_collection/service/impl/BikeComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss13_search_algorithm/exercise/find_ascending_sequence_with_the_largest_length/LargestLength.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss13_search_algorithm/exercise/find_the_longest_consecutive_string/LongestSequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss13_search_algorithm/exercise/implement_binary_search_algorithm_using_recursion/BinarySearchAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss13_search_algorithm/practise/implement_binary_search_algorithm_without_using_recursion_assignment/BinarySearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/controller/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/controller/StudentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/controller/TeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/controller/TeacherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/model/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/model/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/model/Teacher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/IStudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/IStudentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/ITeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/ITeacherService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/impl/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/impl/StudentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/impl/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/impl/TeacherService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/controller/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/model/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/IStudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/IStudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/ITeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/impl/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/impl/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/impl/TeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss11_dsa_stack_queue/exersice/count_occurrences/CountOccurrence.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss11_dsa_stack_queue/exersice/count_occurrences/CountOccurrence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss12_java_collection_framework/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss12_java_collection_framework/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss12_java_collection_framework/model/Motobike.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss12_java_collection_framework/model/Motobike.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss12_java_collection_framework/service/IMotobikeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss12_java_collection_framework/service/IMotobikeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss12_java_collection_framework/service/impl/BikeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss12_java_collection_framework/service/impl/BikeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss12_java_collection_framework/service/impl/MotobikeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss12_java_collection_framework/service/impl/MotobikeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ss12_collection/service/impl/BikeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss12_collection/service/impl/BikeService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,13 +67,13 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CountOccurrence">
-    <configuration name="Bracket" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_dsa_stack_queue.exersice.checking_bracket.Bracket" />
+  <component name="RunManager" selected="Application.LongestSequence">
+    <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss13_search_algorithm.practise.implement_binary_search_algorithm_without_using_recursion_assignment.BinarySearch" />
       <module name="module_2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss11_dsa_stack_queue.exersice.checking_bracket.*" />
+          <option name="PATTERN" value="ss13_search_algorithm.practise.implement_binary_search_algorithm_without_using_recursion_assignment.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,12 +81,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConvertDecimalBinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_dsa_stack_queue.exersice.convert_decimal_binary.ConvertDecimalBinary" />
+    <configuration name="BinarySearchAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss13_search_algorithm.exercise.implement_binary_search_algorithm_using_recursion.BinarySearchAlgorithm" />
       <module name="module_2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss11_dsa_stack_queue.exersice.convert_decimal_binary.*" />
+          <option name="PATTERN" value="ss13_search_algorithm.exercise.implement_binary_search_algorithm_using_recursion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,12 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss10_dsa_mvc.exercise1.view.MainView" />
+    <configuration name="LargestLength" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss13_search_algorithm.exercise.find_ascending_sequence_with_the_largest_length.LargestLength" />
       <module name="module_2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss10_dsa_mvc.exercise1.view.*" />
+          <option name="PATTERN" value="ss13_search_algorithm.exercise.find_ascending_sequence_with_the_largest_length.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,12 +120,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Palindrome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss11_dsa_stack_queue.exersice.palindrome_queue.Palindrome" />
+    <configuration name="LongestSequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss13_search_algorithm.exercise.find_the_longest_consecutive_string.LongestSequence" />
       <module name="module_2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss11_dsa_stack_queue.exersice.palindrome_queue.*" />
+          <option name="PATTERN" value="ss13_search_algorithm.exercise.find_the_longest_consecutive_string.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LongestSequence" />
+        <item itemvalue="Application.BinarySearchAlgorithm" />
+        <item itemvalue="Application.LargestLength" />
+        <item itemvalue="Application.BinarySearch" />
         <item itemvalue="Application.CountOccurrence" />
-        <item itemvalue="Application.MainView" />
-        <item itemvalue="Application.Bracket" />
-        <item itemvalue="Application.Palindrome" />
-        <item itemvalue="Application.ConvertDecimalBinary" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +158,9 @@
       <workItem from="1660477979773" duration="4000" />
       <workItem from="1660479834033" duration="2043000" />
       <workItem from="1660533584863" duration="13303000" />
-      <workItem from="1660619801196" duration="15884000" />
+      <workItem from="1660619801196" duration="16521000" />
+      <workItem from="1660671187702" duration="1889000" />
+      <workItem from="1660698316899" duration="12046000" />
     </task>
     <servers />
   </component>
@@ -187,26 +168,26 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1660642155161">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1660673863546">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1660642155161" />
-    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1660638030640">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1660673863546" />
+    <state width="818" height="212" key="GridCell.Tab.0.bottom" timestamp="1660725517994">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1660638030640" />
-    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1660638030639">
+    <state width="818" height="212" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1660725517994" />
+    <state width="818" height="212" key="GridCell.Tab.0.center" timestamp="1660725517994">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1660638030639" />
-    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1660638030639">
+    <state width="818" height="212" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1660725517994" />
+    <state width="818" height="212" key="GridCell.Tab.0.left" timestamp="1660725517994">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1660638030639" />
-    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1660638030640">
+    <state width="818" height="212" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1660725517994" />
+    <state width="818" height="212" key="GridCell.Tab.0.right" timestamp="1660725517994">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1660638030639" />
+    <state width="818" height="212" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1660725517994" />
     <state x="198" y="112" key="caller.chooser.dialog" timestamp="1660331630510">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
