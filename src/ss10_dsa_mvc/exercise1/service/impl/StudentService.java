@@ -4,6 +4,7 @@ import ss10_dsa_mvc.exercise1.model.Student;
 import ss10_dsa_mvc.exercise1.service.IStudentService;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,10 +13,10 @@ public class StudentService implements IStudentService {
     private static List<Student> students = new ArrayList<>();
 
     static {
-        students.add(new Student(1, "A", "1/1/1999", "Nam", 7, "C06"));
-        students.add(new Student(2, "B", "2/2/1999", "Nữ", 8, "C06"));
-        students.add(new Student(3, "C", "3/2/1999", "Nữ", 9, "C06"));
-        students.add(new Student(4, "D", "4/2/1999", "Nữ", 10, "C06"));
+        students.add(new Student(1, "Châu", "1/1/1999", "Nam", 7, "C06"));
+        students.add(new Student(2, "Ngọc", "2/2/1999", "Nữ", 8, "C06"));
+        students.add(new Student(3, "Nga", "3/2/1999", "Nữ", 9, "C06"));
+        students.add(new Student(4, "Hồng", "4/2/1999", "Nữ", 10, "C06"));
     }
 
     @Override
@@ -125,7 +126,28 @@ public class StudentService implements IStudentService {
 
     @Override
     public void arrangeNameStudent() {
-
+        String temp;
+        String[] str = new String[students.size()];
+        for (int i = 0; i < students.size(); i++) {
+            str[i] = students.get(i).getName();
+        }
+        for (int i = 0; i < students.size(); i++) {
+            for (int j = i + 1; j < students.size(); j++) {
+                if (str[i].compareTo(str[j]) > 0) {
+                    temp = str[i];
+                    str[i] = str[j];
+                    str[j] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < students.size(); i++) {
+            for (int j = 0; j < students.size(); j++) {
+                if (str[i].equals(students.get(j).getName())) {
+                    str[i] = String.valueOf(students.get(j));
+                }
+            }
+        }
+        System.out.println(Arrays.toString(str));
     }
 
     public String getEditInfo(String editContent) {

@@ -34,6 +34,8 @@ public class Student extends Person {
         this.nameClass = nameClass;
     }
 
+
+
     @Override
     public String toString() {
         return "Student{" + super.toString() +

@@ -5,6 +5,7 @@ import ss10_dsa_mvc.exercise1.model.Teacher;
 import ss10_dsa_mvc.exercise1.service.ITeacherService;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,10 +14,10 @@ public class TeacherService implements ITeacherService {
     private static List<Teacher> teachers = new ArrayList<>();
 
     static {
-        teachers.add(new Teacher(1, "A", "12/12/1999", "Nam", "Hoa"));
-        teachers.add(new Teacher(2, "AB", "13/12/1999", "Nữ", "Ly"));
-        teachers.add(new Teacher(3, "AC", "14/12/1999", "Nam", "Tin"));
-        teachers.add(new Teacher(4, "AD", "15/12/1999", "Nữ", "Anh"));
+        teachers.add(new Teacher(1, "Hoàng", "12/12/1999", "Nam", "Hoa"));
+        teachers.add(new Teacher(2, "Ngọc", "13/12/1999", "Nữ", "Ly"));
+        teachers.add(new Teacher(3, "Thanh", "14/12/1999", "Nam", "Tin"));
+        teachers.add(new Teacher(4, "Huyền", "15/12/1999", "Nữ", "Anh"));
     }
 
     public void addTeacher() {
@@ -136,7 +137,28 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void arrangeNameTeacher() {
-
+        String temp;
+        String[] str = new String[teachers.size()];
+        for (int i = 0; i < teachers.size(); i++) {
+            str[i] = teachers.get(i).getName();
+        }
+        for (int i = 0; i < teachers.size(); i++) {
+            for (int j = i + 1; j < teachers.size(); j++) {
+                if (str[i].compareTo(str[j]) > 0) {
+                    temp = str[i];
+                    str[i] = str[j];
+                    str[j] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < teachers.size(); i++) {
+            for (int j = 0; j < teachers.size(); j++) {
+                if (str[i].equals(teachers.get(j).getName())) {
+                    str[i] = String.valueOf(teachers.get(j));
+                }
+            }
+        }
+        System.out.println(Arrays.toString(str));
     }
 
     public String getEditInfo(String editContent) {
