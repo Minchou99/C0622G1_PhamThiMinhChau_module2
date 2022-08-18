@@ -1,28 +1,28 @@
 package ss10_dsa_mvc.exercise1.model;
 
 public class Student extends Person {
-    private String point;
+    private double point;
     private String nameClass;
 
     public Student() {
     }
 
-    public Student(String point, String nameClass) {
+    public Student(double point, String nameClass) {
         this.point = point;
         this.nameClass = nameClass;
     }
 
-    public Student(int id, String name, String dateOfBirth, String gender, String point, String nameClass) {
+    public Student(int id, String name, String dateOfBirth, String gender, double point, String nameClass) {
         super(id, name, dateOfBirth, gender);
         this.point = point;
         this.nameClass = nameClass;
     }
 
-    public String getPoint() {
+    public double getPoint() {
         return point;
     }
 
-    public void setPoint(String point) {
+    public void setPoint(double point) {
         this.point = point;
     }
 
@@ -37,8 +37,8 @@ public class Student extends Person {
     @Override
     public String toString() {
         return "Student{" + super.toString() +
-                "point=" + point +
-                ", nameClass='" + nameClass  +
+                ", point= '" + point + '\'' +
+                ", nameClass= '" + nameClass + '\'' +
                 "} ";
     }
 

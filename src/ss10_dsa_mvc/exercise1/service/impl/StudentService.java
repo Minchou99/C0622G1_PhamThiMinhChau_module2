@@ -11,6 +11,12 @@ public class StudentService implements IStudentService {
     private static Scanner scanner = new Scanner(System.in);
     private static List<Student> students = new ArrayList<>();
 
+    static {
+        students.add(new Student(1, "A", "1/1/1999", "Nam", 7, "C06"));
+        students.add(new Student(2, "B", "2/2/1999", "Nữ", 8, "C06"));
+        students.add(new Student(3, "C", "3/2/1999", "Nữ", 9, "C06"));
+        students.add(new Student(4, "D", "4/2/1999", "Nữ", 10, "C06"));
+    }
 
     @Override
     public void displayAllStudent() {
@@ -75,10 +81,10 @@ public class StudentService implements IStudentService {
                     student.setGender(getEditInfo("Giới tính"));
                     break;
                 case 5:
-                    student.setPoint(getEditInfo("Điểm"));
+                    student.setPoint(Integer.parseInt(getEditInfo("1")));
                     break;
                 case 6:
-                    student.setPoint(getEditInfo("Lớp học"));
+                    student.setNameClass(getEditInfo("Lớp học"));
                     break;
                 case 7:
                     return;
@@ -117,6 +123,11 @@ public class StudentService implements IStudentService {
         }
     }
 
+    @Override
+    public void arrangeNameStudent() {
+
+    }
+
     public String getEditInfo(String editContent) {
         System.out.print("Vui lòng nhập " + editContent + " mới: ");
         return scanner.nextLine();
@@ -143,7 +154,7 @@ public class StudentService implements IStudentService {
         System.out.print("Mời bạn giới tính: ");
         String gender = scanner.nextLine();
         System.out.print("Mời bạn nhập điểm: ");
-        String point = scanner.nextLine();
+        double point = Integer.parseInt(scanner.nextLine());
         System.out.print("Mời bạn nhập tên lớp: ");
         String nameClass = scanner.nextLine();
         Student student = new Student(id, name, dateOfBirth, gender, point, nameClass);

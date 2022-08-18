@@ -1,5 +1,6 @@
 package ss10_dsa_mvc.exercise1.service.impl;
 
+import ss10_dsa_mvc.exercise1.model.Student;
 import ss10_dsa_mvc.exercise1.model.Teacher;
 import ss10_dsa_mvc.exercise1.service.ITeacherService;
 
@@ -11,6 +12,12 @@ public class TeacherService implements ITeacherService {
     private static Scanner scanner = new Scanner(System.in);
     private static List<Teacher> teachers = new ArrayList<>();
 
+    static {
+        teachers.add(new Teacher(1, "A", "12/12/1999", "Nam", "Hoa"));
+        teachers.add(new Teacher(2, "AB", "13/12/1999", "Nữ", "Ly"));
+        teachers.add(new Teacher(3, "AC", "14/12/1999", "Nam", "Tin"));
+        teachers.add(new Teacher(4, "AD", "15/12/1999", "Nữ", "Anh"));
+    }
 
     public void addTeacher() {
         Teacher teacher = this.infoTeacher();
@@ -127,13 +134,18 @@ public class TeacherService implements ITeacherService {
         }
     }
 
+    @Override
+    public void arrangeNameTeacher() {
+
+    }
+
     public String getEditInfo(String editContent) {
         System.out.print("Vui lòng nhập " + editContent + " mới: ");
         return scanner.nextLine();
     }
 
     private Teacher findTeacher() {
-        System.out.println("Mời bạn nhập vào id cần xóa: ");
+        System.out.println("Mời bạn nhập vào id cần sửa: ");
         int id = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < teachers.size(); i++) {
             if (teachers.get(i).getId() == id) {

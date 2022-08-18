@@ -13,4 +13,5 @@ public interface IStudentService {
 
     void searchNameStudent();
 
+    void arrangeNameStudent();
 }

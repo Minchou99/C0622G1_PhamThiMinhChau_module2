@@ -27,6 +27,6 @@ public class Teacher extends Person {
     public String toString() {
         return "Teacher{" +
                 super.toString() +
-                "specialize='" + specialize + "} ";
+                ", specialize= '" + specialize+ '\'' + "} ";
     }
 }

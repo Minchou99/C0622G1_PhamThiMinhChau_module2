@@ -17,9 +17,11 @@ public class TeacherController {
             System.out.println("2. Thêm mới giảng viên");
             System.out.println("3. Cập nhật thông tin giảng viên");
             System.out.println("4. Xóa giảng viên");
-            System.out.println("5. Tìm giảng viên");
-            System.out.println("6. Exit");
-            System.out.print("Mời bạn nhập chức năng 1->6: ");
+            System.out.println("5. Tìm giảng viên theo id");
+            System.out.println("6. Tìm giảng viên theo tên");
+            System.out.println("7. Sắp xếp theo tên");
+            System.out.println("8. Thoát");
+            System.out.print("Mời bạn nhập chức năng 1->8: ");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
@@ -41,6 +43,9 @@ public class TeacherController {
                     teacherService.searchNameTeacher();
                     break;
                 case 7:
+                    teacherService.arrangeNameTeacher();
+                    break;
+                case 8:
                     return;
                 default:
                     System.out.println("Lựa chọn bạn nhập không đúng!");
