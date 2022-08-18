@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="beebab9d-bf16-4097-9433-533de8c5dd26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_2_document/report/[C0622G1] Báo cáo tuần 2_Phạm Thị Minh Châu.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/META-INF/module_2.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/model/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/model/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/model/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/model/Teacher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/ITeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/ITeacherService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/impl/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/impl/TeacherService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss12_java_collection_framework/model/Motobike.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss12_java_collection_framework/model/Motobike.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/impl/StudentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +149,7 @@
       <workItem from="1660671187702" duration="1889000" />
       <workItem from="1660698316899" duration="16960000" />
       <workItem from="1660760077176" duration="6834000" />
-      <workItem from="1660804188433" duration="4250000" />
+      <workItem from="1660804188433" duration="5119000" />
     </task>
     <servers />
   </component>
@@ -171,22 +161,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1660730588950" />
-    <state width="1323" height="407" key="GridCell.Tab.0.bottom" timestamp="1660814941340">
+    <state width="1323" height="200" key="GridCell.Tab.0.bottom" timestamp="1660815262134">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="407" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1660814941340" />
-    <state width="1323" height="407" key="GridCell.Tab.0.center" timestamp="1660814941339">
+    <state width="1323" height="200" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1660815262134" />
+    <state width="1323" height="200" key="GridCell.Tab.0.center" timestamp="1660815262133">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="407" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1660814941339" />
-    <state width="1323" height="407" key="GridCell.Tab.0.left" timestamp="1660814941339">
+    <state width="1323" height="200" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1660815262133" />
+    <state width="1323" height="200" key="GridCell.Tab.0.left" timestamp="1660815262133">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="407" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1660814941339" />
-    <state width="1323" height="407" key="GridCell.Tab.0.right" timestamp="1660814941339">
+    <state width="1323" height="200" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1660815262133" />
+    <state width="1323" height="200" key="GridCell.Tab.0.right" timestamp="1660815262133">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="407" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1660814941339" />
+    <state width="1323" height="200" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1660815262133" />
     <state x="198" y="112" key="caller.chooser.dialog" timestamp="1660331630510">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

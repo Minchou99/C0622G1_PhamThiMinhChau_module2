@@ -4,7 +4,6 @@ import ss10_dsa_mvc.exercise1.model.Student;
 import ss10_dsa_mvc.exercise1.service.IStudentService;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -126,28 +125,20 @@ public class StudentService implements IStudentService {
 
     @Override
     public void arrangeNameStudent() {
-        String temp;
-        String[] str = new String[students.size()];
-        for (int i = 0; i < students.size(); i++) {
-            str[i] = students.get(i).getName();
-        }
-        for (int i = 0; i < students.size(); i++) {
-            for (int j = i + 1; j < students.size(); j++) {
-                if (str[i].compareTo(str[j]) > 0) {
-                    temp = str[i];
-                    str[i] = str[j];
-                    str[j] = temp;
+        boolean isSwap = true;
+        Student temp;
+        for (int i = 0; i < students.size() - 1 && isSwap; i++) {
+            isSwap = false;
+            for (int j = 0; j < students.size() - 1 - i; j++) {
+                if (students.get(j).getName().compareTo(students.get(j + 1).getName()) > 0) {
+                    isSwap = true;
+                    temp = students.get(j + 1);
+                    students.set(j + 1, students.get(j));
+                    students.set(j, temp);
                 }
             }
         }
-        for (int i = 0; i < students.size(); i++) {
-            for (int j = 0; j < students.size(); j++) {
-                if (str[i].equals(students.get(j).getName())) {
-                    str[i] = String.valueOf(students.get(j));
-                }
-            }
-        }
-        System.out.println(Arrays.toString(str));
+        displayAllStudent();
     }
 
     public String getEditInfo(String editContent) {

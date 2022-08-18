@@ -1,11 +1,9 @@
 package ss10_dsa_mvc.exercise1.service.impl;
 
-import ss10_dsa_mvc.exercise1.model.Student;
 import ss10_dsa_mvc.exercise1.model.Teacher;
 import ss10_dsa_mvc.exercise1.service.ITeacherService;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -137,28 +135,20 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void arrangeNameTeacher() {
-        String temp;
-        String[] str = new String[teachers.size()];
-        for (int i = 0; i < teachers.size(); i++) {
-            str[i] = teachers.get(i).getName();
-        }
-        for (int i = 0; i < teachers.size(); i++) {
-            for (int j = i + 1; j < teachers.size(); j++) {
-                if (str[i].compareTo(str[j]) > 0) {
-                    temp = str[i];
-                    str[i] = str[j];
-                    str[j] = temp;
+        boolean isSwap = true;
+        Teacher temp;
+        for (int i = 0; i < teachers.size() - 1 && isSwap; i++) {
+            isSwap = false;
+            for (int j = 0; j < teachers.size() - 1 - i; j++) {
+                if (teachers.get(j).getName().compareTo(teachers.get(j + 1).getName()) > 0) {
+                    isSwap = true;
+                    temp = teachers.get(j + 1);
+                    teachers.set(j + 1, teachers.get(j));
+                    teachers.set(j, temp);
                 }
             }
         }
-        for (int i = 0; i < teachers.size(); i++) {
-            for (int j = 0; j < teachers.size(); j++) {
-                if (str[i].equals(teachers.get(j).getName())) {
-                    str[i] = String.valueOf(teachers.get(j));
-                }
-            }
-        }
-        System.out.println(Arrays.toString(str));
+        displayAllTeacher();
     }
 
     public String getEditInfo(String editContent) {
