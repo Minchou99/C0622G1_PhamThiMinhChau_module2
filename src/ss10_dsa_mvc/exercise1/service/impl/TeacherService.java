@@ -1,9 +1,11 @@
 package ss10_dsa_mvc.exercise1.service.impl;
 
+import ss10_dsa_mvc.exercise1.model.Student;
 import ss10_dsa_mvc.exercise1.model.Teacher;
 import ss10_dsa_mvc.exercise1.service.ITeacherService;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,6 +18,8 @@ public class TeacherService implements ITeacherService {
         teachers.add(new Teacher(2, "Ngọc", "13/12/1999", "Nữ", "Ly"));
         teachers.add(new Teacher(3, "Thanh", "14/12/1999", "Nam", "Tin"));
         teachers.add(new Teacher(4, "Huyền", "15/12/1999", "Nữ", "Anh"));
+        teachers.add(new Teacher(5, "Huyền", "19/12/1999", "Nam", "CD"));
+        teachers.add(new Teacher(6, "Huyền", "21/12/1999", "Nữ", "Anh"));
     }
 
     public void addTeacher() {
@@ -119,16 +123,26 @@ public class TeacherService implements ITeacherService {
                 break;
             }
         }
+
+        System.out.println("Không tìm thấy id giáo viên");
+
     }
 
     @Override
     public void searchNameTeacher() {
-        System.out.print("Vui lòng nhập name cần tìm kiếm: ");
+        List<Teacher> foundTeacher = new LinkedList<>();
+        System.out.print("Vui lòng nhập tên cần tìm kiếm: ");
         String name = scanner.nextLine();
         for (int i = 0; i < teachers.size(); i++) {
             if (teachers.get(i).getName().contains(name)) {
                 System.out.println(teachers.get(i));
-                break;
+            }
+        }
+        if (foundTeacher.isEmpty()) {
+            System.out.println("Không tìm thấy tên giảng viên");
+        } else {
+            for (Teacher teacher : foundTeacher) {
+                System.out.println(teacher.toString());
             }
         }
     }

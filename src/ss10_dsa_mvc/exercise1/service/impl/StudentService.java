@@ -3,9 +3,7 @@ package ss10_dsa_mvc.exercise1.service.impl;
 import ss10_dsa_mvc.exercise1.model.Student;
 import ss10_dsa_mvc.exercise1.service.IStudentService;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class StudentService implements IStudentService {
     private static Scanner scanner = new Scanner(System.in);
@@ -16,6 +14,8 @@ public class StudentService implements IStudentService {
         students.add(new Student(2, "Ngọc", "2/2/1999", "Nữ", 8, "C06"));
         students.add(new Student(3, "Nga", "3/2/1999", "Nữ", 9, "C06"));
         students.add(new Student(4, "Hồng", "4/2/1999", "Nữ", 10, "C06"));
+        students.add(new Student(5, "Hồng", "6/2/1999", "Nữ", 10, "C06"));
+        students.add(new Student(6, "Hồng", "9/2/1999", "Nữ", 10, "C06"));
     }
 
     @Override
@@ -105,20 +105,29 @@ public class StudentService implements IStudentService {
         int id = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getId() == id) {
-                System.out.println(students.get(i));
+                System.out.println(students.get(i).toString());
                 break;
             }
         }
+
+        System.out.println("Không tìm thấy id học sinh");
     }
 
     @Override
     public void searchNameStudent() {
-        System.out.print("Vui lòng nhập name cần tìm kiếm: ");
+        List<Student> foundStudent = new LinkedList<>();
+        System.out.print("Vui lòng nhập tên cần tìm kiếm: ");
         String name = scanner.nextLine();
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getName().contains(name)) {
-                System.out.println(students.get(i));
-                break;
+                foundStudent.add(students.get(i));
+            }
+        }
+        if (foundStudent.isEmpty()) {
+            System.out.println("Không tìm thấy tên học sinh");
+        } else {
+            for (Student student : foundStudent) {
+                System.out.println(student.toString());
             }
         }
     }
