@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beebab9d-bf16-4097-9433-533de8c5dd26" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ss15_exception_debug/exercise/IllegalTriangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ss15_exception_debug/exercise/TriangleException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/impl/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/impl/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_dsa_mvc/exercise1/service/impl/TeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/impl/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/impl/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/impl/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module_2/ss10_dsa_mvc/exercise1/service/impl/TeacherService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +58,7 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainView">
+  <component name="RunManager" selected="Application.IllegalTriangle">
     <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ss14_sort_algorithm.practise.BubbleSort" />
       <module name="module_2" />
@@ -83,12 +85,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IllustrationOfInsertionSortAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss14_sort_algorithm.exercise.IllustrationOfInsertionSortAlgorithm" />
+    <configuration name="IllegalTriangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss15_exception_debug.exercise.IllegalTriangle" />
       <module name="module_2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss14_sort_algorithm.exercise.*" />
+          <option name="PATTERN" value="ss15_exception_debug.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,12 +98,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="algorithm.weds.MainClass" />
+    <configuration name="IllustrationOfInsertionSortAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss14_sort_algorithm.exercise.IllustrationOfInsertionSortAlgorithm" />
       <module name="module_2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="algorithm.weds.*" />
+          <option name="PATTERN" value="ss14_sort_algorithm.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,11 +126,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.IllegalTriangle" />
         <item itemvalue="Application.MainView" />
         <item itemvalue="Application.IllustrationOfInsertionSortAlgorithm" />
         <item itemvalue="Application.BubbleSortAlgorithmIllustration" />
         <item itemvalue="Application.BubbleSort" />
-        <item itemvalue="Application.MainClass" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +155,9 @@
       <workItem from="1660760077176" duration="6834000" />
       <workItem from="1660804188433" duration="5431000" />
       <workItem from="1660839411608" duration="1492000" />
+      <workItem from="1660872823929" duration="4260000" />
+      <workItem from="1660923161203" duration="26000" />
+      <workItem from="1660923518225" duration="1496000" />
     </task>
     <servers />
   </component>
@@ -160,26 +165,26 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1660730588950">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1660890731940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1660730588950" />
-    <state width="1323" height="200" key="GridCell.Tab.0.bottom" timestamp="1660840930313">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1660890731940" />
+    <state width="1323" height="200" key="GridCell.Tab.0.bottom" timestamp="1660925200785">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="200" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1660840930313" />
-    <state width="1323" height="200" key="GridCell.Tab.0.center" timestamp="1660840930313">
+    <state width="1323" height="200" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1660925200785" />
+    <state width="1323" height="200" key="GridCell.Tab.0.center" timestamp="1660925200785">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="200" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1660840930313" />
-    <state width="1323" height="200" key="GridCell.Tab.0.left" timestamp="1660840930313">
+    <state width="1323" height="200" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1660925200785" />
+    <state width="1323" height="200" key="GridCell.Tab.0.left" timestamp="1660925200785">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="200" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1660840930313" />
-    <state width="1323" height="200" key="GridCell.Tab.0.right" timestamp="1660840930313">
+    <state width="1323" height="200" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1660925200785" />
+    <state width="1323" height="200" key="GridCell.Tab.0.right" timestamp="1660925200785">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="200" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1660840930313" />
+    <state width="1323" height="200" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1660925200785" />
     <state x="198" y="112" key="caller.chooser.dialog" timestamp="1660331630510">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
