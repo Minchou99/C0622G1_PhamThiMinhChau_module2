@@ -3,11 +3,9 @@ package ss10_dsa_mvc.exercise1.service.impl;
 import ss10_dsa_mvc.exercise1.model.Student;
 import ss10_dsa_mvc.exercise1.model.Teacher;
 import ss10_dsa_mvc.exercise1.service.ITeacherService;
+import untils.exception.IdException;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class TeacherService implements ITeacherService {
     private static Scanner scanner = new Scanner(System.in);
@@ -29,16 +27,79 @@ public class TeacherService implements ITeacherService {
     }
 
     private Teacher infoTeacher() {
-        System.out.print("Mời bạn nhập id: ");
-        int id = Integer.parseInt(scanner.nextLine());
-        System.out.print("Mời bạn nhập tên: ");
-        String name = scanner.nextLine();
-        System.out.print("Mời bạn nhập ngày sinh: ");
-        String dateOfBirth = scanner.nextLine();
-        System.out.print("Mời bạn giới tính: ");
-        String gender = scanner.nextLine();
-        System.out.print("Mời bạn nhập chuyên môn: ");
-        String specialize = scanner.nextLine();
+        int id;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập id: ");
+                id = Integer.parseInt(scanner.nextLine());
+
+                for (int i = 0; i < teachers.size(); i++) {
+                    if (teachers.get(i).getId() == id) {
+                        throw new IdException("Id này đã tồn tại. Vui lòng nhập id khác.");
+                    }
+                }
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn nhập không phải là số. Vui lòng nhập lại.");
+            } catch (IdException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        String name;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập tên: ");
+                name = scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        String dateOfBirth;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập ngày sinh theo định dạng ngày/tháng/năm:  ");
+                dateOfBirth = scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Bạn nhập không đúng định dạng. Vui lòng nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        String gender;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập giới tính: ");
+                gender = scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
+        String specialize;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập chuyên môn: ");
+                specialize = scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
         Teacher teacher = new Teacher(id, name, dateOfBirth, gender, specialize);
         return teacher;
     }
@@ -115,17 +176,26 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void searchIdTeacher() {
-        System.out.print("Vui lòng nhập id cần tìm kiếm: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id;
+        while (true) {
+            try {
+                System.out.print("Vui lòng nhập id cần tìm kiếm: ");
+                id = Integer.parseInt(scanner.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn nhập không phải là số. Yêu cầu nhập lại.");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ");
+            }
+        }
+
         for (int i = 0; i < teachers.size(); i++) {
             if (teachers.get(i).getId() == id) {
                 System.out.println(teachers.get(i));
                 break;
             }
         }
-
         System.out.println("Không tìm thấy id giáo viên");
-
     }
 
     @Override
