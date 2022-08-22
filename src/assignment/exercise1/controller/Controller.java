@@ -1,4 +1,4 @@
-package ss10_dsa_mvc.exercise1.controller;
+package assignment.exercise1.controller;
 
 import java.util.Scanner;
 

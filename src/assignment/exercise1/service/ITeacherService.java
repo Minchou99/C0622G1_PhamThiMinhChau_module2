@@ -1,4 +1,4 @@
-package ss10_dsa_mvc.exercise1.service;
+package assignment.exercise1.service;
 
 public interface ITeacherService {
 

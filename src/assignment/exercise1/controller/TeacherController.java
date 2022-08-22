@@ -1,7 +1,7 @@
-package ss10_dsa_mvc.exercise1.controller;
+package assignment.exercise1.controller;
 
-import ss10_dsa_mvc.exercise1.service.ITeacherService;
-import ss10_dsa_mvc.exercise1.service.impl.TeacherService;
+import assignment.exercise1.service.ITeacherService;
+import assignment.exercise1.service.impl.TeacherService;
 
 import java.util.Scanner;
 

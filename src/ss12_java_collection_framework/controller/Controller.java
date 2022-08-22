@@ -1,8 +1,5 @@
 package ss12_java_collection_framework.controller;
 
-import ss10_dsa_mvc.exercise1.controller.StudentController;
-import ss10_dsa_mvc.exercise1.controller.TeacherController;
-
 import java.util.Scanner;
 
 public class Controller {

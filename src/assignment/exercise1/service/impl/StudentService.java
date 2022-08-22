@@ -1,7 +1,7 @@
-package ss10_dsa_mvc.exercise1.service.impl;
+package assignment.exercise1.service.impl;
 
-import ss10_dsa_mvc.exercise1.model.Student;
-import ss10_dsa_mvc.exercise1.service.IStudentService;
+import assignment.exercise1.model.Student;
+import assignment.exercise1.service.IStudentService;
 import untils.exception.IdException;
 import untils.exception.PointException;
 

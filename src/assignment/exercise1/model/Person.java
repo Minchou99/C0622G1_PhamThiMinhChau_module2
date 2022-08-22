@@ -1,4 +1,4 @@
-package ss10_dsa_mvc.exercise1.model;
+package assignment.exercise1.model;
 
 public abstract class Person {
     private int id;
