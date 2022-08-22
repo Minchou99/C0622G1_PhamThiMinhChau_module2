@@ -1,7 +1,11 @@
 package assignment.exercise1.service.impl;
 
+import assignment.exercise1.model.SortByNameComparator;
+import assignment.exercise1.model.SortByPointComparator;
 import assignment.exercise1.model.Student;
 import assignment.exercise1.service.IStudentService;
+import assignment.exercise1.service.utils.ReadStudentFile;
+import assignment.exercise1.service.utils.WriteStudentFile;
 import untils.exception.IdException;
 import untils.exception.PointException;
 
@@ -9,19 +13,28 @@ import java.util.*;
 
 public class StudentService implements IStudentService {
     private static Scanner scanner = new Scanner(System.in);
+    private static final String path = "src\\assignment\\exercise1\\data\\student.txt";
+    ReadStudentFile readStudentFile = new ReadStudentFile();
+    WriteStudentFile writeStudentFile = new WriteStudentFile();
     private static List<Student> students = new ArrayList<>();
 
-    static {
-        students.add(new Student(1, "Châu", "1/1/1999", "Nam", 7, "C06"));
-        students.add(new Student(2, "Ngọc", "2/2/1999", "Nữ", 8, "C06"));
-        students.add(new Student(3, "Nga", "3/2/1999", "Nữ", 9, "C06"));
-        students.add(new Student(4, "Hồng", "4/2/1999", "Nữ", 10, "C06"));
-        students.add(new Student(5, "Hồng", "6/2/1999", "Nữ", 10, "C06"));
-        students.add(new Student(6, "Hồng", "9/2/1999", "Nữ", 10, "C06"));
-    }
+//    static {
+//        students.add(new Student(1, "Châu", "1/1/1999", "Nam", 7, "C06"));
+//        students.add(new Student(2, "Ngọc", "2/2/1999", "Nữ", 8, "C06"));
+//        students.add(new Student(3, "Nga", "3/2/1999", "Nữ", 9, "C06"));
+//        students.add(new Student(4, "Hồng", "4/2/1999", "Nữ", 10, "C06"));
+//        students.add(new Student(5, "Hồng", "6/2/1999", "Nữ", 10, "C06"));
+//        students.add(new Student(6, "Hồng", "9/2/1999", "Nữ", 10, "C06"));
+//    }
 
     @Override
     public void displayAllStudent() {
+        System.out.println("Danh sách sinh viên");
+        students = readStudentFile.readStudentFile(path);
+
+        if (students.size() == 0) {
+            System.out.println("Danh sách rỗng");
+        }
         for (Student student : students) {
             System.out.println(student);
         }
@@ -29,13 +42,18 @@ public class StudentService implements IStudentService {
 
     @Override
     public void addStudent() {
+        students = readStudentFile.readStudentFile(path);
         Student student = this.infoStudent();
         students.add(student);
-        System.out.println("Thêm mới học sinh thành công");
+        writeStudentFile.writeStudentFile(path, students);
+        System.out.println("Thêm mới học sinh thành công!");
+        System.out.println("Danh sách sinh viên");
+        displayAllStudent();
     }
 
     @Override
     public void removeStudent() {
+        students = readStudentFile.readStudentFile(path);
         Student student = this.findStudent();
         if (student == null) {
             System.out.println("Không tìm thấy đối tượng cần xóa");
@@ -47,13 +65,23 @@ public class StudentService implements IStudentService {
             if (choice == 1) {
                 students.remove(student);
                 System.out.println("Xóa thành công!");
+                writeStudentFile.writeStudentFile(path, students);
+            } else {
+                System.out.println("Xóa sinh viên không thành công!");
             }
         }
     }
 
     @Override
     public void editStudent() {
+        students = readStudentFile.readStudentFile(path);
         Student student = findStudent();
+
+        if (student == null) {
+            System.out.println("ID không tồn tại trong danh sách!");
+            return;
+        }
+
         int choose;
         do {
             System.out.println("Học viên cần chỉnh sửa: ");
@@ -90,8 +118,11 @@ public class StudentService implements IStudentService {
                     break;
                 case 7:
                     return;
+                default:
+                    System.out.println("Chức năng bạn chọn không có trong menu!");
             }
             System.out.println("Chỉnh sửa thành công!");
+            writeStudentFile.writeStudentFile(path, students);
             System.out.println("Bạn có muốn tiếp tục chỉnh sửa?");
             System.out.println("Vui lòng chọn 1 (Có) - 2 (Không)");
             choose = Integer.parseInt(scanner.nextLine());
@@ -103,6 +134,7 @@ public class StudentService implements IStudentService {
 
     @Override
     public void searchIdStudent() {
+        students = readStudentFile.readStudentFile(path);
         int id;
         while (true) {
             try {
@@ -128,6 +160,7 @@ public class StudentService implements IStudentService {
 
     @Override
     public void searchNameStudent() {
+        students = readStudentFile.readStudentFile(path);
         List<Student> foundStudent = new LinkedList<>();
         System.out.print("Vui lòng nhập tên cần tìm kiếm: ");
         String name = scanner.nextLine();
@@ -145,23 +178,37 @@ public class StudentService implements IStudentService {
         }
     }
 
-    @Override
-    public void arrangeNameStudent() {
-        boolean isSwap = true;
-        Student temp;
-        for (int i = 0; i < students.size() - 1 && isSwap; i++) {
-            isSwap = false;
-            for (int j = 0; j < students.size() - 1 - i; j++) {
-                if (students.get(j).getName().compareTo(students.get(j + 1).getName()) > 0) {
-                    isSwap = true;
-                    temp = students.get(j + 1);
-                    students.set(j + 1, students.get(j));
-                    students.set(j, temp);
-                }
-            }
-        }
+    public void sortStudentByName() {
+        students = readStudentFile.readStudentFile(path);
+        students.sort(new SortByNameComparator());
+        writeStudentFile.writeStudentFile(path, students);
         displayAllStudent();
     }
+
+//    public void sortStudentByScore() {
+//        students = readStudentFile.readStudentFile(path);
+//        students.sort(new SortByPointComparator());
+//        writeStudentFile.writeStudentFile(path, students);
+//        displayAllStudent();
+//    }
+
+//    @Override
+//    public void arrangeNameStudent() {
+//        boolean isSwap = true;
+//        Student temp;
+//        for (int i = 0; i < students.size() - 1 && isSwap; i++) {
+//            isSwap = false;
+//            for (int j = 0; j < students.size() - 1 - i; j++) {
+//                if (students.get(j).getName().compareTo(students.get(j + 1).getName()) > 0) {
+//                    isSwap = true;
+//                    temp = students.get(j + 1);
+//                    students.set(j + 1, students.get(j));
+//                    students.set(j, temp);
+//                }
+//            }
+//        }
+//        displayAllStudent();
+//    }
 
     public String getEditInfo(String editContent) {
         System.out.print("Vui lòng nhập " + editContent + " mới: ");
@@ -169,6 +216,7 @@ public class StudentService implements IStudentService {
     }
 
     private Student findStudent() {
+        students = readStudentFile.readStudentFile(path);
         System.out.println("Mời bạn nhập vào id cần xóa: ");
         int id = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < students.size(); i++) {

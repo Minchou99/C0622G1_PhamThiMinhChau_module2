@@ -43,9 +43,8 @@ public class StudentController {
                     studentService.searchNameStudent();
                     break;
                 case 7:
-                    studentService.arrangeNameStudent();
+                    studentService.sortStudentByName();
                     break;
-
                 case 8:
                     return;
                 default:
