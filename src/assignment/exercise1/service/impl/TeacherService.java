@@ -10,14 +10,14 @@ public class TeacherService implements ITeacherService {
     private static Scanner scanner = new Scanner(System.in);
     private static List<Teacher> teachers = new ArrayList<>();
 
-    static {
-        teachers.add(new Teacher(1, "Hoàng", "12/12/1999", "Nam", "Hoa"));
-        teachers.add(new Teacher(2, "Ngọc", "13/12/1999", "Nữ", "Ly"));
-        teachers.add(new Teacher(3, "Thanh", "14/12/1999", "Nam", "Tin"));
-        teachers.add(new Teacher(4, "Huyền", "15/12/1999", "Nữ", "Anh"));
-        teachers.add(new Teacher(5, "Huyền", "19/12/1999", "Nam", "CD"));
-        teachers.add(new Teacher(6, "Huyền", "21/12/1999", "Nữ", "Anh"));
-    }
+//    static {
+//        teachers.add(new Teacher(1, "Hoàng", "12/12/1999", "Nam", "Hoa"));
+//        teachers.add(new Teacher(2, "Ngọc", "13/12/1999", "Nữ", "Ly"));
+//        teachers.add(new Teacher(3, "Thanh", "14/12/1999", "Nam", "Tin"));
+//        teachers.add(new Teacher(4, "Huyền", "15/12/1999", "Nữ", "Anh"));
+//        teachers.add(new Teacher(5, "Huyền", "19/12/1999", "Nam", "CD"));
+//        teachers.add(new Teacher(6, "Huyền", "21/12/1999", "Nữ", "Anh"));
+//    }
 
     public void addTeacher() {
         Teacher teacher = this.infoTeacher();
@@ -26,11 +26,11 @@ public class TeacherService implements ITeacherService {
     }
 
     private Teacher infoTeacher() {
-        int id;
+        String id;
         while (true) {
             try {
                 System.out.print("Mời bạn nhập id: ");
-                id = Integer.parseInt(scanner.nextLine());
+                id = scanner.nextLine();
 
                 for (int i = 0; i < teachers.size(); i++) {
                     if (teachers.get(i).getId() == id) {
@@ -146,7 +146,7 @@ public class TeacherService implements ITeacherService {
 
             switch (choose) {
                 case 1:
-                    teacher.setId(Integer.parseInt(getEditInfo("ID")));
+                    teacher.setId(getEditInfo("ID"));
                     break;
                 case 2:
                     teacher.setName(getEditInfo("Tên Giảng Viên"));
@@ -175,11 +175,11 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void searchIdTeacher() {
-        int id;
+        String id;
         while (true) {
             try {
                 System.out.print("Vui lòng nhập id cần tìm kiếm: ");
-                id = Integer.parseInt(scanner.nextLine());
+                id = scanner.nextLine();
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Bạn nhập không phải là số. Yêu cầu nhập lại.");
@@ -241,7 +241,7 @@ public class TeacherService implements ITeacherService {
 
     private Teacher findTeacher() {
         System.out.println("Mời bạn nhập vào id cần sửa: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        String id = scanner.nextLine();
         for (int i = 0; i < teachers.size(); i++) {
             if (teachers.get(i).getId() == id) {
                 return teachers.get(i);

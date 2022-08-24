@@ -2,7 +2,7 @@ package casestudy.controllers;
 
 import casestudy.services.IPromotionService;
 import casestudy.services.impl.PromotionService;
-import casestudy.utils.PromotionException;
+import casestudy.utils.exception.PromotionException;
 
 import java.util.Scanner;
 

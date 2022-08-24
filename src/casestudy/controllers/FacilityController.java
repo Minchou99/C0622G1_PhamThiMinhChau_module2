@@ -2,7 +2,7 @@ package casestudy.controllers;
 
 import casestudy.services.IFacilityService;
 import casestudy.services.impl.FacilityService;
-import casestudy.utils.FacilityException;
+import casestudy.utils.exception.FacilityException;
 
 import java.util.Scanner;
 

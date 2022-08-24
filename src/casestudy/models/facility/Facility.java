@@ -1,37 +1,37 @@
 package casestudy.models.facility;
 
 public abstract class Facility {
-    private String id;
-    private String name;
+    private String serviceName;
     private double area;
     private double price;
     private int amountOfPeople;
+    private String rentalType;
 
     public Facility() {
     }
 
-    public Facility(String id, String name, double area, double price, int amountOfPeople) {
-        this.id = id;
-        this.name = name;
+    public Facility(String serviceName, double area, double price, int amountOfPeople, String rentalType) {
+        this.serviceName = serviceName;
         this.area = area;
         this.price = price;
         this.amountOfPeople = amountOfPeople;
+        this.rentalType = rentalType;
     }
 
-    public String getId() {
-        return id;
+    public String getServiceName() {
+        return serviceName;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
-    public String getName() {
-        return name;
+    public String getRentalType() {
+        return rentalType;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRentalType(String rentalType) {
+        this.rentalType = rentalType;
     }
 
     public double getArea() {
@@ -60,11 +60,12 @@ public abstract class Facility {
 
     @Override
     public String toString() {
-        return "Facility: " +
-                "id= " + id +
-                ", name= " + name  +
-                ", area= " + area +
-                ", price= " + price +
-                ", amountOfPeople= " + amountOfPeople ;
+        return "Facility{" +
+                "serviceName='" + serviceName + '\'' +
+                ", area=" + area +
+                ", price=" + price +
+                ", amountOfPeople=" + amountOfPeople +
+                ", rentalType='" + rentalType + '\'' +
+                '}';
     }
 }

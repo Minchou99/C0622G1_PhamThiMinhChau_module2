@@ -2,7 +2,7 @@ package casestudy.controllers;
 
 import casestudy.services.ICustomerService;
 import casestudy.services.impl.CustomerService;
-import casestudy.utils.CustomerException;
+import casestudy.utils.exception.CustomerException;
 
 import java.util.Scanner;
 

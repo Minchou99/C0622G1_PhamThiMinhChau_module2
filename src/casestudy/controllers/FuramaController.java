@@ -1,6 +1,6 @@
 package casestudy.controllers;
 
-import casestudy.utils.FuramaException;
+import casestudy.utils.exception.FuramaException;
 
 import java.util.Scanner;
 

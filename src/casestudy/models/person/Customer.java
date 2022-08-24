@@ -1,23 +1,15 @@
 package casestudy.models.person;
 
 public class Customer extends Person {
-    private String address;
     private String customerType;
+    private String address;
 
     public Customer() {
     }
 
-    public Customer(String id, String name, String dateOfBirth, String gender, double phoneNumber, String email, String address, String customerType) {
-        super(id, name, dateOfBirth, gender, phoneNumber, email);
-        this.address = address;
+    public Customer(String id, String name, String dateOfBirth, String gender, String identityCard, double phoneNumber, String email, String customerType, String address) {
+        super(id, name, dateOfBirth, gender, identityCard, phoneNumber, email);
         this.customerType = customerType;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -29,11 +21,18 @@ public class Customer extends Person {
         this.customerType = customerType;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
-        return "Customer{" +
-                "address='" + address + '\'' +
-                ", customerType='" + customerType + '\'' +
-                "} " + super.toString();
+        return "Customer" + super.toString() +
+                "customerType='" + customerType + '\'' +
+                ", address='" + address;
     }
 }

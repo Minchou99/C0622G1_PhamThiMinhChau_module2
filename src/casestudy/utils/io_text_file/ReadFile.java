@@ -1,10 +1,10 @@
-package untils.io_text_file;
+package casestudy.utils.io_text_file;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadFileUtil {
+public class ReadFile {
     public static List<String> readFile(String path) {
 
         List<String> strings = new ArrayList<>();

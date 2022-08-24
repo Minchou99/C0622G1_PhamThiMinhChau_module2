@@ -2,7 +2,7 @@ package casestudy.controllers;
 
 import casestudy.services.IBookingService;
 import casestudy.services.impl.BookingService;
-import casestudy.utils.BookingException;
+import casestudy.utils.exception.BookingException;
 
 import java.util.Scanner;
 

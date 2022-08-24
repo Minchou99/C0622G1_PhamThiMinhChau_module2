@@ -14,7 +14,7 @@ public class ReadFileCSV {
     }
 
     public static void writeFile(List<Country> countries) throws IOException {
-        File file = new File("src\\\\ss16_io_text_file\\\\exercise\\\\read_file_csv\\\\country.csv");
+        File file = new File("src\\\\ss16_io_text_file\\\\exercise\\\\read_file_csv\\\\country_result.csv");
         FileWriter fileWriter = new FileWriter(file);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 

@@ -1,4 +1,4 @@
-package casestudy.utils;
+package casestudy.utils.exception;
 
 public class BookingException extends Exception{
     public BookingException(String message) {

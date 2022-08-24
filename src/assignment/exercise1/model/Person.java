@@ -1,7 +1,7 @@
 package assignment.exercise1.model;
 
 public abstract class Person {
-    private int id;
+    private String id;
     private String name;
     private String dateOfBirth;
     private String gender;
@@ -9,18 +9,18 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(int id, String name, String dateOfBirth, String gender) {
+    public Person(String id, String name, String dateOfBirth, String gender) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -50,9 +50,6 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "id=" + id +
-                ", name='" + name + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", gender='" + gender + '\'' ;
+        return String.format("%s,%s,%s,%s,", id, name, dateOfBirth, gender);
     }
 }

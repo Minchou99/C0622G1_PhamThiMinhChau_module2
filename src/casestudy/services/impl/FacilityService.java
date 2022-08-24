@@ -21,6 +21,6 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public void returnMainMenu() {
-        FuramaController.displayMainMenu();
+
     }
 }

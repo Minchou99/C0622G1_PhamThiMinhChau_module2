@@ -1,4 +1,4 @@
-package casestudy.utils;
+package casestudy.utils.exception;
 
 public class EmployeeException extends Exception {
     public EmployeeException(String message) {

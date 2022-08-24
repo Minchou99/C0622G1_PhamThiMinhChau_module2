@@ -1,18 +1,26 @@
 package casestudy.models.person;
 
 public class Employee extends Person {
+    private String level;
     private String position;
-    private String part;
-    private double salary;
+    private String salary;
 
     public Employee() {
     }
 
-    public Employee(String id, String name, String dateOfBirth, String gender, double phoneNumber, String email, String position, String part, double salary) {
-        super(id, name, dateOfBirth, gender, phoneNumber, email);
+    public Employee(String id, String name, String dateOfBirth, String gender, String identityCard, double phoneNumber, String email, String level, String position, String salary) {
+        super(id, name, dateOfBirth, gender, identityCard, phoneNumber, email);
+        this.level = level;
         this.position = position;
-        this.part = part;
         this.salary = salary;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
     }
 
     public String getPosition() {
@@ -23,28 +31,19 @@ public class Employee extends Person {
         this.position = position;
     }
 
-    public String getPart() {
-        return part;
-    }
-
-    public void setPart(String part) {
-        this.part = part;
-    }
-
-    public double getSalary() {
+    public String getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(String salary) {
         this.salary = salary;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "position='" + position + '\'' +
-                ", part='" + part + '\'' +
-                ", salary=" + salary +
-                "} " + super.toString();
+        return "Employee: " + super.toString() +
+                "level='" + level + '\'' +
+                ", position='" + position + '\'' +
+                ", salary='" + salary ;
     }
 }

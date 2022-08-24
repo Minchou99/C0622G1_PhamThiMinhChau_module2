@@ -2,7 +2,7 @@ package casestudy.controllers;
 
 import casestudy.services.IEmployeeService;
 import casestudy.services.impl.EmployeeService;
-import casestudy.utils.EmployeeException;
+import casestudy.utils.exception.EmployeeException;
 
 import java.util.Scanner;
 

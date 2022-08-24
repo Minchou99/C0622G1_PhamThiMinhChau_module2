@@ -1,11 +1,10 @@
 package assignment.exercise1.service.impl;
 
 import assignment.exercise1.model.SortByNameComparator;
-import assignment.exercise1.model.SortByPointComparator;
 import assignment.exercise1.model.Student;
 import assignment.exercise1.service.IStudentService;
-import assignment.exercise1.service.utils.ReadStudentFile;
-import assignment.exercise1.service.utils.WriteStudentFile;
+import assignment.exercise1.utils.ReadStudentFile;
+import assignment.exercise1.utils.WriteStudentFile;
 import untils.exception.IdException;
 import untils.exception.PointException;
 
@@ -16,7 +15,7 @@ public class StudentService implements IStudentService {
     private static final String path = "src\\assignment\\exercise1\\data\\student.txt";
     ReadStudentFile readStudentFile = new ReadStudentFile();
     WriteStudentFile writeStudentFile = new WriteStudentFile();
-    private static List<Student> students = new ArrayList<>();
+     List<Student> students = new ArrayList<>();
 
 //    static {
 //        students.add(new Student(1, "Châu", "1/1/1999", "Nam", 7, "C06"));
@@ -99,7 +98,7 @@ public class StudentService implements IStudentService {
 
             switch (choose) {
                 case 1:
-                    student.setId(Integer.parseInt(getEditInfo("ID")));
+                    student.setId(getEditInfo("ID"));
                     break;
                 case 2:
                     student.setName(getEditInfo("Tên Học Viên"));
@@ -135,19 +134,9 @@ public class StudentService implements IStudentService {
     @Override
     public void searchIdStudent() {
         students = readStudentFile.readStudentFile(path);
-        int id;
-        while (true) {
-            try {
-                System.out.print("Vui lòng nhập id cần tìm kiếm: ");
-                id = Integer.parseInt(scanner.nextLine());
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Bạn nhập không phải là số. Yêu cầu nhập lại.");
-            } catch (Exception e) {
-                System.out.println("Bạn nhập không hợp lệ");
-            }
-        }
 
+        System.out.print("Vui lòng nhập id cần tìm kiếm: ");
+        String id = scanner.nextLine();
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getId() == id) {
                 System.out.println(students.get(i).toString());
@@ -218,7 +207,7 @@ public class StudentService implements IStudentService {
     private Student findStudent() {
         students = readStudentFile.readStudentFile(path);
         System.out.println("Mời bạn nhập vào id cần xóa: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        String id = scanner.nextLine();
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getId() == id) {
                 return students.get(i);
@@ -228,20 +217,18 @@ public class StudentService implements IStudentService {
     }
 
     public Student infoStudent() {
-        int id;
+        String id;
         while (true) {
             try {
                 System.out.print("Mời bạn nhập id: ");
-                id = Integer.parseInt(scanner.nextLine());
+                id = scanner.nextLine();
 
                 for (int i = 0; i < students.size(); i++) {
-                    if (students.get(i).getId() == id) {
+                    if (id.equals(students.get(i).getId())) {
                         throw new IdException("Id này đã tồn tại. Vui lòng nhập id khác.");
                     }
                 }
                 break;
-            } catch (NumberFormatException e) {
-                System.out.println("Bạn nhập không phải là số. Vui lòng nhập lại.");
             } catch (IdException e) {
                 System.out.println(e.getMessage());
             } catch (Exception e) {

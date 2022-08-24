@@ -1,9 +1,8 @@
-package assignment.exercise1.service.utils;
+package assignment.exercise1.utils;
 
 import assignment.exercise1.model.Student;
 import untils.io_text_file.WriteFileUtil;
 
-import java.io.IOException;
 import java.util.List;
 
 public class WriteStudentFile {

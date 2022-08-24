@@ -16,6 +16,6 @@ public class PromotionService implements IPromotionService {
 
     @Override
     public void returnMainMenu() {
-        FuramaController.displayMainMenu();
+
     }
 }
