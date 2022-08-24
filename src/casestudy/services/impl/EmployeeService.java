@@ -207,7 +207,7 @@ public class EmployeeService implements IEmployeeService {
         System.out.println("Mời bạn nhập mã nhân viên: ");
         String id = scanner.nextLine();
         for (int i = 0; i < employees.size(); i++) {
-            if (employees.get(i).getId() == id) {
+            if (employees.get(i).getId().equals(id)) {
                 return employees.get(i);
             }
         }

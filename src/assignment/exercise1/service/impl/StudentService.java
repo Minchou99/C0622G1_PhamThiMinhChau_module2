@@ -206,7 +206,7 @@ public class StudentService implements IStudentService {
 
     private Student findStudent() {
         students = readStudentFile.readStudentFile(path);
-        System.out.println("Mời bạn nhập vào id cần xóa: ");
+        System.out.println("Mời bạn nhập id : ");
         String id = scanner.nextLine();
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getId() == id) {

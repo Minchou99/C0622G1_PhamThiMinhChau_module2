@@ -19,9 +19,9 @@ public class BookingController {
                     System.out.println("Chào mừng bạn đến với hệ thống quản lí đặt phòng của FURAMA");
                     System.out.println("1. Thêm mới đặt phòng");
                     System.out.println("2. Hiển thị danh sách đặt phòng");
-                    System.out.println("3. Tạo mới các co thắt");
-                    System.out.println("4. Hiển thị danh sách co thắt");
-                    System.out.println("5. Chỉnh sửa co thắt");
+                    System.out.println("3. Tạo mới hợp đồng");
+                    System.out.println("4. Hiển thị danh sách hợp đồng");
+                    System.out.println("5. Chỉnh sửa hợp đồng");
                     System.out.println("6. Trở về hệ thống quản lí chính");
                     System.out.println("Mời bạn nhập chức năng 1 -> 6: ");
                     choice = Integer.parseInt(scanner.nextLine());

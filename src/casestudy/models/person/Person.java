@@ -1,5 +1,7 @@
 package casestudy.models.person;
 
+import java.util.Objects;
+
 public abstract class Person {
     private String id;
     private String name;
@@ -88,5 +90,24 @@ public abstract class Person {
                 ", identityCard='" + identityCard + '\'' +
                 ", phoneNumber=" + phoneNumber +
                 ", email='" + email ;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Double.compare(person.phoneNumber, phoneNumber) == 0 &&
+                Objects.equals(id, person.id) &&
+                Objects.equals(name, person.name) &&
+                Objects.equals(dateOfBirth, person.dateOfBirth) &&
+                Objects.equals(gender, person.gender) &&
+                Objects.equals(identityCard, person.identityCard) &&
+                Objects.equals(email, person.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, dateOfBirth, gender, identityCard, phoneNumber, email);
     }
 }
