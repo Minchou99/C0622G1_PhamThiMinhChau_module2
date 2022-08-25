@@ -239,7 +239,7 @@ public class StudentService implements IStudentService {
         }
 
         String name;
-        String regex = "[a-z A-Z]{5,50}";
+        String regex = "^\\p{Lu}\\p{Ll}+(\\s\\p{Lu}\\p{Ll}+)*$";
         while (true) {
             try {
                 System.out.print("Mời bạn nhập tên: ");
@@ -300,7 +300,7 @@ public class StudentService implements IStudentService {
         }
 
         String nameClass;
-        String nameClassRegex = "[AC][0-9]{4}[GI][1]";
+        String nameClassRegex = "^[AC][0-9]{4}[GI][1]$";
         while (true) {
             try {
                 System.out.print("Mời bạn nhập tên lớp: ");

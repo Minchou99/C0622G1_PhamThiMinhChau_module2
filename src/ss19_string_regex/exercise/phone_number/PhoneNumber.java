@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PhoneNumber {
-    private static final String ACCOUNT_REGEX = "[(]\\d{2}[)][-][(][0][0-9]{9}[)]";
+    private static final String ACCOUNT_REGEX = "^[(]\\d{2}[)][-][(][0][0-9]{9}[)]$";
 
     public PhoneNumber() {
     }

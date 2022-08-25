@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class NameOfClass {
-    private static final String ACCOUNT_REGEX = "[CAP]?[0-9]{4}[GHIKLM]?";
+    private static final String ACCOUNT_REGEX = "^[CAP]?[0-9]{4}[GHIKLM]?$";
 
     public NameOfClass() {
     }
