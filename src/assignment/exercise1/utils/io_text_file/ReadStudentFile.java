@@ -1,4 +1,4 @@
-package assignment.exercise1.utils;
+package assignment.exercise1.utils.io_text_file;
 
 import assignment.exercise1.model.Student;
 import untils.io_text_file.ReadFileUtil;

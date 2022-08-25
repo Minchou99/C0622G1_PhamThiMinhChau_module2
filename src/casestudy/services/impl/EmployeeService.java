@@ -10,7 +10,10 @@ import java.util.Scanner;
 
 public class EmployeeService implements IEmployeeService {
     private static Scanner scanner = new Scanner(System.in);
-    List<Employee> employees = new ArrayList<>();
+   private static List<Employee> employees = new ArrayList<>();
+static {
+    employees.add( new Employee("134","ứdrft","sdfg","fg","456788",234567,"dfg","fg","d","4567"));
+}
 
 
     @Override

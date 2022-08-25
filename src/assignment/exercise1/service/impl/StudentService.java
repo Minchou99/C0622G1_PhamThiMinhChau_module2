@@ -3,8 +3,11 @@ package assignment.exercise1.service.impl;
 import assignment.exercise1.model.SortByNameComparator;
 import assignment.exercise1.model.Student;
 import assignment.exercise1.service.IStudentService;
-import assignment.exercise1.utils.ReadStudentFile;
-import assignment.exercise1.utils.WriteStudentFile;
+import assignment.exercise1.utils.exception.NameClassException;
+import assignment.exercise1.utils.exception.NameException;
+import assignment.exercise1.utils.io_text_file.ReadStudentFile;
+import assignment.exercise1.utils.io_text_file.WriteStudentFile;
+import com.sun.xml.internal.bind.v2.runtime.Name;
 import untils.exception.IdException;
 import untils.exception.PointException;
 
@@ -15,7 +18,7 @@ public class StudentService implements IStudentService {
     private static final String path = "src\\assignment\\exercise1\\data\\student.txt";
     ReadStudentFile readStudentFile = new ReadStudentFile();
     WriteStudentFile writeStudentFile = new WriteStudentFile();
-     List<Student> students = new ArrayList<>();
+    List<Student> students = new ArrayList<>();
 
 //    static {
 //        students.add(new Student(1, "Châu", "1/1/1999", "Nam", 7, "C06"));
@@ -205,7 +208,6 @@ public class StudentService implements IStudentService {
     }
 
     private Student findStudent() {
-        students = readStudentFile.readStudentFile(path);
         System.out.println("Mời bạn nhập id : ");
         String id = scanner.nextLine();
         for (int i = 0; i < students.size(); i++) {
@@ -237,13 +239,17 @@ public class StudentService implements IStudentService {
         }
 
         String name;
+        String regex = "[a-z A-Z]{5,50}";
         while (true) {
             try {
                 System.out.print("Mời bạn nhập tên: ");
                 name = scanner.nextLine();
+                if (!(name.matches(regex))) {
+                    throw new NameException("Vui lòng nhập tên không chứa kí tự đặc biệt và độ dài kí tự từ (5-50)");
+                }
                 break;
-            } catch (InputMismatchException e) {
-                System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
+            } catch (NameException e) {
+                System.out.println(e.getMessage());
             } catch (Exception e) {
                 System.out.println("Bạn nhập không hợp lệ");
             }
@@ -294,13 +300,17 @@ public class StudentService implements IStudentService {
         }
 
         String nameClass;
+        String nameClassRegex = "[AC][0-9]{4}[GI][1]";
         while (true) {
             try {
                 System.out.print("Mời bạn nhập tên lớp: ");
                 nameClass = scanner.nextLine();
+                if (!(nameClass.matches(nameClassRegex))) {
+                    throw new NameClassException("Vui lòng nhập tên theo đúng định dạng (A|C)XXXX(G|I)1 với X là các số từ 1->9");
+                }
                 break;
-            } catch (InputMismatchException e) {
-                System.out.println("Bạn nhập không phải là chữ. Vui lòng nhập lại.");
+            } catch (NameClassException e) {
+                System.out.println(e.getMessage());
             } catch (Exception e) {
                 System.out.println("Bạn nhập không hợp lệ");
             }
