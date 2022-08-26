@@ -7,7 +7,6 @@ import assignment.exercise1.utils.exception.NameClassException;
 import assignment.exercise1.utils.exception.NameException;
 import assignment.exercise1.utils.io_text_file.ReadStudentFile;
 import assignment.exercise1.utils.io_text_file.WriteStudentFile;
-import com.sun.xml.internal.bind.v2.runtime.Name;
 import untils.exception.IdException;
 import untils.exception.PointException;
 
@@ -208,10 +207,11 @@ public class StudentService implements IStudentService {
     }
 
     private Student findStudent() {
+        students = readStudentFile.readStudentFile(path);
         System.out.println("Mời bạn nhập id : ");
         String id = scanner.nextLine();
         for (int i = 0; i < students.size(); i++) {
-            if (students.get(i).getId() == id) {
+            if (students.get(i).getId().equals(id)) {
                 return students.get(i);
             }
         }

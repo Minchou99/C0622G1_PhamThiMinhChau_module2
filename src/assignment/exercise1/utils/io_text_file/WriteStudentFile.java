@@ -7,7 +7,7 @@ import java.util.List;
 
 public class WriteStudentFile {
     public void writeStudentFile(String path, List<Student> studentList) {
-        String data = "id,name,dateOfBirth,gender,score,className\n";
+        String data = "";
 
         for (Student student : studentList) {
             data += student.toString() + "\n";

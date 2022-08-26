@@ -1,29 +1,22 @@
 package casestudy.utils.io_text_file;
 
-import java.io.*;
+import assignment.exercise1.model.Student;
+import untils.io_text_file.ReadFileUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReadFile {
-    public static List<String> readFile(String path) {
+    public List<Student> readStudentFile(String path) {
+        List<String> strings = ReadFileUtil.readFile(path);
+        List<Student> students = new ArrayList<>();
 
-        List<String> strings = new ArrayList<>();
-//        bufferedReader.readLine();
-        String line;
-        try {
-            File file = new File(path);
-            FileReader fileReader = new FileReader(file);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-            while ((line = bufferedReader.readLine()) != null) {
-                strings.add(line);
-            }
-            bufferedReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Không đọc được file hoặc file không tồn tại.");
-        } catch (IOException e) {
-            e.printStackTrace();
+        String[] info;
+        for (String line : strings) {
+            info = line.split(",");
+            students.add(new Student(info[0], info[1], info[2],
+                    info[3], Double.parseDouble(info[4]), info[5]));
         }
-        return strings;
+        return students;
     }
 }
