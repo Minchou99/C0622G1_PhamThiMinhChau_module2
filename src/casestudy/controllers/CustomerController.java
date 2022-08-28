@@ -47,8 +47,7 @@ public class CustomerController {
                     customerService.editCustomer();
                     break;
                 case 4:
-                    customerService.returnMainMenu();
-                    break;
+                    return;
                 default:
                     System.out.println("Lựa chọn bạn nhập không đúng.");
             }

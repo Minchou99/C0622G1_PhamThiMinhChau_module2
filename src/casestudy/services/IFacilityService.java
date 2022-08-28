@@ -7,5 +7,4 @@ public interface IFacilityService {
 
     void displayListFacilityMaintenance();
 
-    void returnMainMenu();
 }

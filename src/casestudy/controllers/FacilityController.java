@@ -47,8 +47,7 @@ public class FacilityController {
                     facilityService.displayListFacilityMaintenance();
                     break;
                 case 4:
-                    facilityService.returnMainMenu();
-                    break;
+                    return;
                 default:
                     System.out.println("Lựa chọn bạn nhập không đúng.");
             }

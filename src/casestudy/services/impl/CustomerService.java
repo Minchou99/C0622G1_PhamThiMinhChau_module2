@@ -3,24 +3,20 @@ package casestudy.services.impl;
 import casestudy.controllers.FuramaController;
 import casestudy.models.person.Customer;
 import casestudy.services.ICustomerService;
+import casestudy.utils.io_text_file.ReadAndWriteCustomer;
+import casestudy.utils.io_text_file.ReadAndWriteEmployee;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class CustomerService implements ICustomerService {
     private static Scanner scanner = new Scanner(System.in);
     private static List<Customer> customers = new LinkedList<>();
-
-    static {
-        customers.add(new Customer("12", "Nam", "29/09/23", "Nam", "1234567", 02345, "thavksjbc", "bâcn", "had noi"));
-    }
+    private static final String CUSTOMER_PATH= "src\\casestudy\\data\\customer.csv";
 
     @Override
     public void displayListCustomer() {
         System.out.println("Danh sách khách hàng");
-
+        customers =  ReadAndWriteCustomer.readCustomerFile(CUSTOMER_PATH);
         if (customers.size() == 0) {
             System.out.println("Danh sách rỗng");
         }
@@ -34,10 +30,11 @@ public class CustomerService implements ICustomerService {
     public void addNewCustomer() {
         Customer customer = this.infoCustomer();
         customers.add(customer);
+        ReadAndWriteCustomer.writeCustomerFile(CUSTOMER_PATH,customers,true);
         System.out.println("Thêm mới khách hàng thành công!");
         System.out.println("Danh sách sau khi thêm");
+        ReadAndWriteCustomer.readCustomerFile(CUSTOMER_PATH);
         displayListCustomer();
-
     }
 
     private Customer infoCustomer() {
@@ -97,6 +94,7 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public void editCustomer() {
+        customers =  ReadAndWriteCustomer.readCustomerFile(CUSTOMER_PATH);
         Customer customer = findCustomer();
 
         if (customer == null) {
@@ -154,6 +152,7 @@ public class CustomerService implements ICustomerService {
                 default:
                     System.out.println("Chức năng bạn chọn không có trong menu!");
             }
+            ReadAndWriteCustomer.writeCustomerFile(CUSTOMER_PATH,customers,false);
             System.out.println("Chỉnh sửa thành công!");
             System.out.println("Bạn có muốn tiếp tục chỉnh sửa?");
             System.out.println("Vui lòng chọn 1(Có) - 2(Không)");
@@ -165,6 +164,7 @@ public class CustomerService implements ICustomerService {
     }
 
     private Customer findCustomer() {
+        customers =  ReadAndWriteCustomer.readCustomerFile(CUSTOMER_PATH);
         System.out.println("Mời bạn nhập mã khách hàng: ");
         String id = scanner.nextLine();
         for (int i = 0; i < customers.size(); i++) {
@@ -175,13 +175,8 @@ public class CustomerService implements ICustomerService {
         return null;
     }
 
-    public String getEditInfo(String string) {
-        System.out.println("Vui lòng nhập " + string + " mới: ");
+    public String getEditInfo(String editContent) {
+        System.out.println("Vui lòng nhập " + editContent + " mới: ");
         return scanner.nextLine();
-    }
-
-    @Override
-    public void returnMainMenu() {
-        FuramaController.displayMainMenu();
     }
 }

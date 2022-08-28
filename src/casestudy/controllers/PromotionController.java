@@ -43,8 +43,7 @@ public class PromotionController {
                     promotionService.displayListCustomersGetVoucher();
                     break;
                 case 3:
-                    promotionService.returnMainMenu();
-                    break;
+                    return;
                 default:
                     System.out.println("Lựa chọn bạn nhập không đúng.");
             }

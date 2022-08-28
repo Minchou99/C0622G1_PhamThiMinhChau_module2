@@ -70,13 +70,11 @@ public class Booking {
 
     @Override
     public String toString() {
-        return "Booking{" +
-                "bookingId='" + bookingId + '\'' +
-                ", startDay='" + startDay + '\'' +
-                ", endDay='" + endDay + '\'' +
-                ", customerId='" + customerId + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                ", serviceType='" + serviceType + '\'' +
-                '}';
+        return bookingId + "," +
+                startDay + "," +
+                endDay + "," +
+                customerId + "," +
+                serviceName + "," +
+                serviceType;
     }
 }

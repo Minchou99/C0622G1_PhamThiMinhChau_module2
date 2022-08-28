@@ -6,6 +6,4 @@ public interface IEmployeeService {
     void addNewEmployee();
 
     void editEmployee();
-
-    void returnMainMenu();
 }

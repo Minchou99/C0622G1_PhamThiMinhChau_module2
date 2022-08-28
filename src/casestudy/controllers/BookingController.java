@@ -55,8 +55,7 @@ public class BookingController {
                     bookingService.editContracts();
                     break;
                 case 6:
-                    bookingService.returnMainMenu();
-                    break;
+                    return;
                 default:
                     System.out.println("Lựa chọn bạn nhập không đúng.");
             }

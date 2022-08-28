@@ -28,8 +28,4 @@ public class BookingService implements IBookingService {
     public void editContracts() {
 
     }
-
-    @Override
-    public void returnMainMenu() {
-    }
 }

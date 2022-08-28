@@ -5,5 +5,4 @@ public interface IPromotionService {
 
     void displayListCustomersGetVoucher();
 
-    void returnMainMenu();
 }

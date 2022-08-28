@@ -47,8 +47,7 @@ public class EmployeeController {
                     employeeService.editEmployee();
                     break;
                 case 4:
-                    employeeService.returnMainMenu();
-                    break;
+                   return;
                 default:
                     System.out.println("Lựa chọn bạn nhập không đúng.");
             }

@@ -11,6 +11,4 @@ public interface IBookingService {
 
     void editContracts();
 
-    void returnMainMenu();
-
 }

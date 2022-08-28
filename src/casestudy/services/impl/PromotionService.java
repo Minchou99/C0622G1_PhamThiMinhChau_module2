@@ -13,9 +13,4 @@ public class PromotionService implements IPromotionService {
     public void displayListCustomersGetVoucher() {
 
     }
-
-    @Override
-    public void returnMainMenu() {
-
-    }
 }

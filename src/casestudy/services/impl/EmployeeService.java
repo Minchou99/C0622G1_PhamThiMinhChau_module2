@@ -3,6 +3,7 @@ package casestudy.services.impl;
 import casestudy.controllers.FuramaController;
 import casestudy.models.person.Employee;
 import casestudy.services.IEmployeeService;
+import casestudy.utils.io_text_file.ReadAndWriteEmployee;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +12,10 @@ import java.util.Scanner;
 public class EmployeeService implements IEmployeeService {
     private static Scanner scanner = new Scanner(System.in);
    private static List<Employee> employees = new ArrayList<>();
-static {
-    employees.add( new Employee("134","ứdrft","sdfg","fg","456788",234567,"dfg","fg","d","4567"));
-}
-
-
+   private static final String EMPLOYEE_PATH = "src\\casestudy\\data\\employee.csv";
     @Override
     public void displayListEmployee() {
+        employees= ReadAndWriteEmployee.readEmployeeFile(EMPLOYEE_PATH);
         System.out.println("Danh sách nhân viên");
 
         if (employees.size() == 0) {
@@ -33,8 +31,10 @@ static {
     public void addNewEmployee() {
         Employee employee = this.infoEmployee();
         employees.add(employee);
+        ReadAndWriteEmployee.writeEmployeeFile(EMPLOYEE_PATH,employees,true);
         System.out.println("Thêm mới nhân viên thành công!");
         System.out.println("Danh sách sau khi thêm");
+        ReadAndWriteEmployee.readEmployeeFile(EMPLOYEE_PATH);
         displayListEmployee();
     }
 
@@ -130,6 +130,7 @@ static {
 
     @Override
     public void editEmployee() {
+        employees = ReadAndWriteEmployee.readEmployeeFile(EMPLOYEE_PATH);
         Employee employee = findEmployee();
 
         if (employee == null) {
@@ -191,6 +192,7 @@ static {
                 default:
                     System.out.println("Chức năng bạn chọn không có trong menu!");
             }
+            ReadAndWriteEmployee.writeEmployeeFile(EMPLOYEE_PATH,employees,false);
             System.out.println("Chỉnh sửa thành công!");
             System.out.println("Bạn có muốn tiếp tục chỉnh sửa?");
             System.out.println("Vui lòng chọn 1(Có) - 2(Không)");
@@ -207,6 +209,7 @@ static {
     }
 
     private Employee findEmployee() {
+        employees= ReadAndWriteEmployee.readEmployeeFile(EMPLOYEE_PATH);
         System.out.println("Mời bạn nhập mã nhân viên: ");
         String id = scanner.nextLine();
         for (int i = 0; i < employees.size(); i++) {
@@ -215,10 +218,5 @@ static {
             }
         }
         return null;
-    }
-
-    @Override
-    public void returnMainMenu() {
-        FuramaController.displayMainMenu();
     }
 }
