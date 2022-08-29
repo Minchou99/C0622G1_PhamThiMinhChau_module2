@@ -8,13 +8,13 @@ public abstract class Person {
     private String dateOfBirth;
     private String gender;
     private String identityCard;
-    private double phoneNumber;
+    private String phoneNumber;
     private String email;
 
     public Person() {
     }
 
-    public Person(String id, String name, String dateOfBirth, String gender, String identityCard, double phoneNumber, String email) {
+    public Person(String id, String name, String dateOfBirth, String gender, String identityCard, String phoneNumber, String email) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -64,11 +64,11 @@ public abstract class Person {
         this.identityCard = identityCard;
     }
 
-    public double getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(double phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -96,12 +96,12 @@ public abstract class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return Double.compare(person.phoneNumber, phoneNumber) == 0 &&
-                Objects.equals(id, person.id) &&
+        return Objects.equals(id, person.id) &&
                 Objects.equals(name, person.name) &&
                 Objects.equals(dateOfBirth, person.dateOfBirth) &&
                 Objects.equals(gender, person.gender) &&
                 Objects.equals(identityCard, person.identityCard) &&
+                Objects.equals(phoneNumber, person.phoneNumber) &&
                 Objects.equals(email, person.email);
     }
 

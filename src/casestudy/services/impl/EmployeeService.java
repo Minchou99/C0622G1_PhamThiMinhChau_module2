@@ -3,8 +3,13 @@ package casestudy.services.impl;
 import casestudy.controllers.FuramaController;
 import casestudy.models.person.Employee;
 import casestudy.services.IEmployeeService;
+import casestudy.utils.exception.*;
 import casestudy.utils.io_text_file.ReadAndWriteEmployee;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.ResolverStyle;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,7 +34,7 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public void addNewEmployee() {
-        Employee employee = this.infoEmployee();
+        Employee employee = infoEmployee();
         employees.add(employee);
         ReadAndWriteEmployee.writeEmployeeFile(EMPLOYEE_PATH,employees,true);
         System.out.println("Thêm mới nhân viên thành công!");
@@ -39,29 +44,187 @@ public class EmployeeService implements IEmployeeService {
     }
 
     public Employee infoEmployee() {
-        System.out.println("Mời bạn nhập mã nhân viên: ");
-        String id = scanner.nextLine();
-        System.out.println("Mời bạn nhập Họ và tên: ");
-        String name = scanner.nextLine();
-        System.out.println("Mời bạn nhập ngày tháng năm sinh: ");
-        String dateOfBirth = scanner.nextLine();
-        System.out.println("Mời bạn nhập giới tính: ");
-        String gender = scanner.nextLine();
-        System.out.println("Mời bạn nhập CMND: ");
-        String identityCard = scanner.nextLine();
-        System.out.println("Mời bạn nhập số điện thoại: ");
-        double phoneNumber = Double.parseDouble(scanner.nextLine());
-        System.out.println("Mời bạn nhập địa chỉ email: ");
-        String email = scanner.nextLine();
+        String id;
+        while (true) {
+            try {
+                System.out.println("Mời bạn nhập mã nhân viên: ");
+                id = scanner.nextLine();
+                for (int i = 0; i < employees.size(); i++) {
+                    if (id.equals(employees.get(i).getId())) {
+                        throw new IdException("Mã nhân viên này đã tồn tại. Vui lòng nhập mã nhân viên mới.");
+                    }
+                }
+
+                if (id.equals("")) {
+                    throw new SpaceException("Vui lòng nhập mã nhân viên. Không được bỏ trống mục này.");
+                }
+                break;
+            } catch (IdException e) {
+                e.getMessage();
+            } catch (SpaceException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Bạn nhập mã không đúng yêu cầu");
+            }
+        }
+
+        String name;
+        while (true) {
+            try {
+                System.out.println("Mời bạn nhập Họ và tên: ");
+                name = scanner.nextLine();
+                if (!(name.matches("^(\\p{Lu}\\p{Ll}+(\\s\\p{Lu}\\p{Ll}+)*){5,50}$}"))) {
+                    throw new NameException("Vui lòng nhập tên viết hoa chữ cái đầu và tên hơn 5 kí tự và nhỏ hơn 50 kí tụ.");
+                }
+                if (name.equals("")) {
+                    throw new SpaceException("Vui lòng nhập họ và tên nhân viên. Không được bỏ trống mục này.");
+                }
+                break;
+            } catch (NameException e) {
+                System.out.println(e.getMessage());
+            } catch (SpaceException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+            }
+        }
+
+        String dateOfBirth;
+        String pattern = "dd/MM/YYYY";
+        DateTimeFormatter dateTimeFormatter;
+        LocalDate birthday;
+
+        while (true) {
+            try {
+                System.out.println("Mời bạn nhập ngày tháng năm sinh: ");
+                dateOfBirth = scanner.nextLine();
+                if (dateOfBirth.matches("^\\W*$")) {
+                    throw new AgeException("Vui lòng nhập số, không được nhập chữ.");
+                }
+                dateTimeFormatter = DateTimeFormatter.ofPattern(pattern).withResolverStyle(ResolverStyle.STRICT);
+                birthday = LocalDate.parse(dateOfBirth, dateTimeFormatter);
+
+                int age = calculatePeriod(birthday);
+                if (age <= 0 || age >= 100) {
+                    throw new AgeException("Tuổi bạn nhập không hợp lệ. Vui lòng nhập tuổi lớn hơn 0 và nhỏ hơn 100.");
+                }
+                if (dateOfBirth.equals("")) {
+                    throw new SpaceException("Vui lòng nhập ngày sinh nhân viên. Không được bỏ trống mục này.");
+                }
+                break;
+            } catch (AgeException e) {
+                System.out.println(e.getMessage());
+            } catch (SpaceException e) {
+                System.out.println(e.getMessage());
+            } catch (NumberFormatException e) {
+                System.out.println("Ngày sinh phải có định dạng là dd/MM/yyyy (với dd là ngày, MM là tháng, yyyy là năm)");
+            } catch (Exception e) {
+                System.out.println("Bạn nhập không hợp lệ. Vui lòng nhập lại.");
+            }
+        }
+
+        String gender;
+        while (true) {
+            try {
+                System.out.println("Mời bạn nhập giới tính: ");
+                gender = scanner.nextLine();
+                if (gender.matches("^\\W*$")) {
+                    throw new GenderException("Vui lòng nhập giới tình là Nam, Nữ hoặc Khác. Không được nhập số");
+                }
+                if (gender.equals("")) {
+                    throw new SpaceException("Vui lòng nhập giới tính khách hàng. Không được bỏ trống mục này.");
+                }
+                break;
+            } catch (GenderException e) {
+                System.out.println(e.getMessage());
+            } catch (SpaceException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Bạn nhập sai định dạng, vui lòng nhập lại.");
+            }
+        }
+
+        String identityCard;
+        while (true) {
+            try {
+                System.out.println("Mời bạn nhập CMND: ");
+                identityCard = scanner.nextLine();
+                if (!(identityCard.matches("^[0-9]{9}|[0-9]{12}$"))) {
+                    throw new IdentityCardException("Vui lòng nhập số chứng minh nhân dân 9 số hoặc 12 số");
+                }
+                if (identityCard.equals("")) {
+                    throw new SpaceException("Vui lòng nhập CMND khách hàng. Không được bỏ trống mục này.");
+                }
+                break;
+            } catch (IdentityCardException e) {
+                System.out.println(e.getMessage());
+            } catch (SpaceException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Bạn nhập sai, vui lòng nhập lại.");
+            }
+        }
+
+        String phoneNumber;
+        while (true) {
+            try {
+                System.out.println("Mời bạn nhập số điện thoại: ");
+                phoneNumber = scanner.nextLine();
+                if (!(phoneNumber.matches("^\\([+][8][4]\\)[1-9][1-9]{8}$"))) {
+                    throw new PhoneNumberException("Vui lòng nhập số điện thoại gồm 9 số với số đầu tiên không phải là số 0");
+                }
+                if (phoneNumber.equals("")) {
+                    throw new SpaceException("Vui lòng nhập số điện thoại khách hàng. Không được bỏ trống mục này.");
+                }
+                break;
+            } catch (PhoneNumberException e) {
+                System.out.println(e.getMessage());
+            } catch (SpaceException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Bạn nhập sai định dạng, vui lòng nhập lại.");
+            }
+        }
+
+        String email;
+        while (true) {
+            try {
+                System.out.println("Mời bạn nhập địa chỉ email: ");
+                email = scanner.nextLine();
+                if (!(email.matches("^[A-Za-z0-9]+\\@[A-Za-z0-9]+[.][A-Za-z]+$"))) {
+                    throw new EmailException("Vui lòng nhập mail theo định dạng abc@gmail.com,ab@yahoo.com,abc@hotmail.com");
+                }
+                if (email.equals("")) {
+                    throw new SpaceException("Vui lòng nhập email khách hàng. Không được bỏ trống mục này.");
+                }
+                break;
+            } catch (EmailException e) {
+                System.out.println(e.getMessage());
+            } catch (SpaceException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Bạn nhập sai định dạng, vui lòng nhập lại.");
+            }
+        }
+
         System.out.println("Mời bạn nhập trình độ: ");
         String level = employeeLevel();
+
         System.out.println("Mời bạn nhập vị trí: ");
         String position = employeePosition();
+
         System.out.println("Mời bạn nhập lương: ");
         String salary = scanner.nextLine();
 
         Employee employee = new Employee(id, name, dateOfBirth, gender, identityCard, phoneNumber, email, level, position, salary);
         return employee;
+    }
+
+    public static int calculatePeriod(LocalDate localDate) {
+        LocalDate now = LocalDate.now();
+        int age = Period.between(localDate, now).getYears();
+        return age;
+
     }
 
     public String employeeLevel() {
@@ -173,16 +336,16 @@ public class EmployeeService implements IEmployeeService {
                     employee.setIdentityCard(getEditInfo("CMND"));
                     break;
                 case 6:
-                    employee.setPhoneNumber(Integer.parseInt(getEditInfo("số điện thoại")));
+                    employee.setPhoneNumber(getEditInfo("số điện thoại"));
                     break;
                 case 7:
                     employee.setEmail(getEditInfo("địa chỉ email"));
                     break;
                 case 8:
-                    employee.setLevel(getEditInfo("trình độ"));
+                    employee.setLevel(employeeLevel());
                     break;
                 case 9:
-                    employee.setPosition(getEditInfo("vị trí"));
+                    employee.setPosition(employeePosition());
                     break;
                 case 10:
                     employee.setSalary(getEditInfo("lương"));
@@ -203,8 +366,8 @@ public class EmployeeService implements IEmployeeService {
         } while (true);
     }
 
-    public String getEditInfo(String string) {
-        System.out.println("Vui lòng nhập " + string + " mới: ");
+    public String getEditInfo(String editContent) {
+        System.out.println("Vui lòng nhập " + editContent + " mới: ");
         return scanner.nextLine();
     }
 

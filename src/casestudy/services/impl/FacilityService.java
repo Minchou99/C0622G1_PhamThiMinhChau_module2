@@ -96,8 +96,7 @@ public class FacilityService implements IFacilityService {
                 addNewRoom();
                 break;
             case 4:
-                FacilityController.managementFacility();
-                break;
+               return;
 
         }
     }
@@ -119,7 +118,7 @@ public class FacilityService implements IFacilityService {
         System.out.println("Mời bạn nhập dịch vụ miễn phí đi kèm");
         String freeStuff = scanner.nextLine();
         Room room = new Room(serviceCode, serviceName, area, price, amountOfPeople, rentalType, freeStuff);
-        rooms.put(room, 1);
+        rooms.put(room, 0);
         ReadAndWriteFacility.writeFacilityFile(PATH_ROOM, rooms, true);
         System.out.println("Thêm mới phòng thành công");
     }
@@ -143,7 +142,7 @@ public class FacilityService implements IFacilityService {
         System.out.println("Mời bạn nhập số tầng");
         int floor = Integer.parseInt(scanner.nextLine());
         House house = new House(serviceCode, serviceName, area, price, amountOfPeople, rentalType, roomStandard, floor);
-        houses.put(house, 1);
+        houses.put(house, 0);
         ReadAndWriteFacility.writeFacilityFile(PATH_HOUSE, houses, true);
         System.out.println("Thêm mới nhà thành công");
     }
@@ -169,7 +168,7 @@ public class FacilityService implements IFacilityService {
         System.out.println("Mời bạn nhập số tầng");
         int floor = Integer.parseInt(scanner.nextLine());
         Villa villa = new Villa(serviceCode, serviceName, area, price, amountOfPeople, rentalType, roomStandard, poolArea, floor);
-        villas.put(villa, 1);
+        villas.put(villa, 0);
         ReadAndWriteFacility.writeFacilityFile(PATH_VILLA, villas, true);
         System.out.println("Thêm mới villa thành công");
     }
@@ -201,7 +200,7 @@ public class FacilityService implements IFacilityService {
                         System.out.println("Không có villa nào đang được bảo trì");
                     } else {
                         for (Facility villa : villas.keySet()) {
-                            if (villas.get(villa) > 4) {
+                            if (villas.get(villa) > 5) {
                                 System.out.println(villa + " được sử dụng: " + villas.get(villa));
                             } else {
                                 System.out.println("Không có villa nào cần được bảo trì");
@@ -215,7 +214,7 @@ public class FacilityService implements IFacilityService {
                         System.out.println("Không có house nào đang được bảo trì");
                     } else {
                         for (Facility house : houses.keySet()) {
-                            if (houses.get(house) > 4) {
+                            if (houses.get(house) > 5) {
                                 System.out.println(house + " được sử dụng: " + houses.get(house));
                             } else {
                                 System.out.println("Không có house nào cần được bảo trì");
@@ -229,7 +228,7 @@ public class FacilityService implements IFacilityService {
                         System.out.println("Không có phòng nào đang được bảo trì");
                     } else {
                         for (Facility room : rooms.keySet()) {
-                            if (rooms.get(room) > 4) {
+                            if (rooms.get(room) > 5) {
                                 System.out.println(room + " được sử dụng: " + rooms.get(room));
                             } else {
                                 System.out.println("Không có phòng nào cần được bảo trì");

@@ -1,9 +1,11 @@
 package casestudy.models;
 
+import java.time.LocalDate;
+
 public class Booking {
     private String bookingId;
-    private String startDay;
-    private String endDay;
+    private LocalDate startDay;
+    private LocalDate endDay;
     private String customerId;
     private String serviceName;
     private String serviceType;
@@ -11,7 +13,7 @@ public class Booking {
     public Booking() {
     }
 
-    public Booking(String bookingId, String startDay, String endDay, String customerId, String serviceName, String serviceType) {
+    public Booking(String bookingId, LocalDate startDay, LocalDate endDay, String customerId, String serviceName, String serviceType) {
         this.bookingId = bookingId;
         this.startDay = startDay;
         this.endDay = endDay;
@@ -28,19 +30,19 @@ public class Booking {
         this.bookingId = bookingId;
     }
 
-    public String getStartDay() {
+    public LocalDate getStartDay() {
         return startDay;
     }
 
-    public void setStartDay(String startDay) {
+    public void setStartDay(LocalDate startDay) {
         this.startDay = startDay;
     }
 
-    public String getEndDay() {
+    public LocalDate getEndDay() {
         return endDay;
     }
 
-    public void setEndDay(String endDay) {
+    public void setEndDay(LocalDate endDay) {
         this.endDay = endDay;
     }
 

@@ -21,7 +21,7 @@ public class ReadAndWriteCustomer {
             while ((line = bufferedReader.readLine()) != null) {
                 String[] info = line.split(",");
                 customers.add(new Customer(info[0], info[1], info[2], info[3], info[4],
-                        Double.parseDouble(info[5]), info[6], info[7], info[8]));
+                        info[5], info[6], info[7], info[8]));
             }
             bufferedReader.close();
         } catch (FileNotFoundException e) {
